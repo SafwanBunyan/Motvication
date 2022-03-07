@@ -41,7 +41,7 @@ namespace NewMotivationHR.DB
         [DefaultValue(20)]
         public int Administrative { get; set; } = 20;
         [Display(Name = "الاجمالي", GroupName = "التقييم"),]
-        public int TotalRatio { get; set; } = 100;
+        public int TotalRatio { get; set; } 
         [Display(Name = "الحافز بعد التقييم")]
         public int SalaryEvaluation { get; set; } = 0;
         [Display(Name = "كسب عمل")]
