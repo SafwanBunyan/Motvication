@@ -1,4 +1,6 @@
-﻿using NewMotivationHR.DAL;
+﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
+using NewMotivationHR.DAL;
 using NewMotivationHR.DAL.Model;
 using NewMotivationHR.DB;
 using NewMotivationHR.DB.Enume;
@@ -23,6 +25,7 @@ namespace NewMotivationHR.PL.SalaryForms
         Employee employee = new Employee();
         EmpModel model = new EmpModel();
         EmployeeSalary salary;
+  
 
         public void getdata()
         {
@@ -39,16 +42,34 @@ namespace NewMotivationHR.PL.SalaryForms
         }
         private void TotalSalary()
         {
-            int value = Convert.ToInt32(Employee_idLookUpEdit.EditValue);
-             var salary = model.Employees.Where(t => t.ID == value).FirstOrDefault().Salary;
-            AdministrativeTextEdit.EditValue =( 20-(((Convert.ToInt32(AbsenceDaysTextEdit.EditValue)) *2)+((Convert.ToInt32(VacationDaysTextEdit.EditValue)) *1))).ToString();
-            //TotalRate();
-            TotalRatioTextEdit.EditValue = Convert.ToInt32(FollowTaskTextEdit.EditValue) + Convert.ToInt32(PerformanceTextEdit.EditValue) + Convert.ToInt32(AdministrativeTextEdit.EditValue) + Convert.ToInt32(AbilityPlanTextEdit.EditValue) + Convert.ToInt32(WorkAccuracyTextEdit.EditValue);
-            var erning= salary - (salary - (Convert.ToInt32(TotalRatioTextEdit.EditValue) * salary / 100));
-            SalaryEvaluationTextEdit.EditValue = erning;
-            EarningWorkTextEdit.EditValue = erning * 15 / 100;
-            DiscountTextEdit.EditValue = (Convert.ToInt32(EarningWorkTextEdit.EditValue) + Convert.ToInt32(DonateTextEdit.EditValue));
-            NetSalaryTextEdit.EditValue = (Convert.ToInt32(SalaryEvaluationTextEdit.EditValue) - Convert.ToInt32(DiscountTextEdit.EditValue)).ToString();
+            try
+            {
+                if ( !string.IsNullOrEmpty(FollowTaskTextEdit.EditValue.ToString()) 
+                    &!string.IsNullOrEmpty(PerformanceTextEdit.EditValue.ToString())
+                    &!string.IsNullOrEmpty(AdministrativeTextEdit.EditValue.ToString())
+                    &!string.IsNullOrEmpty(AbilityPlanTextEdit.EditValue.ToString())
+                    &!string.IsNullOrEmpty(WorkAccuracyTextEdit.EditValue.ToString()))
+                {
+                    int value = Convert.ToInt32(Employee_idLookUpEdit.EditValue);
+                    var salary = model.Employees.Where(t => t.ID == value).FirstOrDefault().Salary;
+                    AdministrativeTextEdit.EditValue = (20 - (((Convert.ToInt32(AbsenceDaysTextEdit.EditValue)) * 2) + ((Convert.ToInt32(VacationDaysTextEdit.EditValue)) * 1))).ToString();
+                    //TotalRate();
+                    
+                    TotalRatioTextEdit.EditValue = (Convert.ToInt32(FollowTaskTextEdit.EditValue) + Convert.ToInt32(PerformanceTextEdit.EditValue) + Convert.ToInt32(AdministrativeTextEdit.EditValue) + Convert.ToInt32(AbilityPlanTextEdit.EditValue) + Convert.ToInt32(WorkAccuracyTextEdit.EditValue)).ToString();
+                    var erning = salary - (salary - (Convert.ToInt32(TotalRatioTextEdit.EditValue) * salary / 100));
+                    SalaryEvaluationTextEdit.EditValue = erning;
+                    EarningWorkTextEdit.EditValue = erning * 15 / 100;
+                    DiscountTextEdit.EditValue = (Convert.ToInt32(EarningWorkTextEdit.EditValue) + Convert.ToInt32(DonateTextEdit.EditValue)).ToString();
+                    NetSalaryTextEdit.EditValue = (Convert.ToInt32(SalaryEvaluationTextEdit.EditValue) - Convert.ToInt32(DiscountTextEdit.EditValue)).ToString();
+                }
+            }
+            catch (Exception exception)
+            {
+
+               ProjectData.SetProjectError(exception);
+                Interaction.MsgBox(exception.Message, MsgBoxStyle.OkOnly, null);
+                ProjectData.ClearProjectError();
+            }
         }
 
 
@@ -57,7 +78,7 @@ namespace NewMotivationHR.PL.SalaryForms
             TotalSalary();
             EmployeeSalary salary = new EmployeeSalary();
             // salary= employeeSalaryBindingSource.Current as EmployeeSalary;
-            salary.Employee_id = Convert.ToInt16(Employee_idLookUpEdit.EditValue);
+            salary.Employee_id = Convert.ToInt32(Employee_idLookUpEdit.EditValue);
             salary.FollowTask = Convert.ToInt32(FollowTaskTextEdit.EditValue);
             salary.WorkAccuracy = Convert.ToInt32(WorkAccuracyTextEdit.EditValue);
             salary.Performance = Convert.ToInt32(PerformanceTextEdit.EditValue);
@@ -95,10 +116,12 @@ namespace NewMotivationHR.PL.SalaryForms
             month.txt_year.Visible = false;
             
             month.ShowDialog();
+            getdata();
         }
 
         private void btn_new_Click(object sender, EventArgs e)
         {
+            
             employeeSalaryBindingSource.DataSource = new EmployeeSalary();
            employeeBindingSource.DataSource = new Employee();
             btn_delet.Visible = false;
@@ -116,7 +139,7 @@ namespace NewMotivationHR.PL.SalaryForms
             //  salary.TotalRatio = TotalRate();
 
             EmployeeSalary salary = Add_Salary();
-            salary = Add_Salary();
+            //salary = Add_Salary();
             model.EmployeeSalaries.Add(salary);
                 model.SaveChanges();
                 // Refresh();
@@ -133,11 +156,16 @@ namespace NewMotivationHR.PL.SalaryForms
 
         private void Employee_idLookUpEdit_EditValueChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Employee_idLookUpEdit.EditValue.ToString()) && Convert.ToInt32(Employee_idLookUpEdit.EditValue) > 0)
+            var netsalary = NetSalaryTextEdit.EditValue;
+            if(!string.IsNullOrEmpty(netsalary.ToString()))
+            //if (Convert.ToInt32( ) != 0|| NetSalaryTextEdit.EditValue !=null)
             {
+                if (!string.IsNullOrEmpty(Employee_idLookUpEdit.EditValue.ToString()) && Convert.ToInt32(Employee_idLookUpEdit.EditValue) > 0)
+                {
 
-                TotalSalary();
-                
+                    TotalSalary();
+
+                }
             }
         }
 
@@ -181,18 +209,23 @@ namespace NewMotivationHR.PL.SalaryForms
 
         private void PerformanceTextEdit_EditValueChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(Employee_idLookUpEdit.EditValue.ToString()))
+            {
+                TotalSalary();
+            }
+
            //TotalRate();
-           TotalSalary();
+          
         }
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
 
 
-            EmployeeSalary salary =Add_Salary();
-
+            //EmployeeSalary salary =Add_Salary();
+            var sal = employeeSalaryBindingSource.Current as EmployeeSalary;
             //  salary.TotalRatio = TotalRate();
-            model.EmployeeSalaries.AddOrUpdate(salary);
+            model.EmployeeSalaries.AddOrUpdate(sal);
             model.SaveChanges();
             // Refresh();
             employeeSalaryBindingSource.Clear();

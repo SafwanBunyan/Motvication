@@ -58,6 +58,9 @@ namespace NewMotivationHR.DAL
             }
             catch (Exception exception)
             {
+                ProjectData.SetProjectError(exception);
+                Interaction.MsgBox(exception.Message, MsgBoxStyle.OkOnly, null);
+                ProjectData.ClearProjectError();
 
                 return null;
             }
@@ -72,6 +75,9 @@ namespace NewMotivationHR.DAL
             }
             catch (Exception exception)
             {
+                ProjectData.SetProjectError(exception);
+                Interaction.MsgBox(exception.Message, MsgBoxStyle.OkOnly, null);
+                ProjectData.ClearProjectError();
                 return null;
             }
         }

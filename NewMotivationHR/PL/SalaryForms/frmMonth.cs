@@ -94,8 +94,8 @@ namespace NewMotivationHR.PL.SalaryForms
                         sal.getdata();
                         this.Close();
                     }
-                  
 
+                    sal.getdata();
 
                 }
                 catch (Exception ex)
@@ -103,6 +103,7 @@ namespace NewMotivationHR.PL.SalaryForms
                     MessageBox.Show(ex.Message);
                     throw;
                 }
+                sal.getdata();
             }
             else if (btn_Save.Text == "طباعة")
             {
