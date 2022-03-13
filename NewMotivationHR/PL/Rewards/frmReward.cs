@@ -43,6 +43,8 @@ namespace NewMotivationHR.PL.Rewards
             Employee_idLookUpEdit.Properties.DataSource = model.Employees.Select(t => new { t.ID, t.Name }).ToList();
             Employee_idLookUpEdit.Properties.DisplayMember = "Name";
             Employee_idLookUpEdit.Properties.ValueMember = "ID";
+            //lkp.Properties.Columns[valueMember].Visible = false ; 
+
         }
 
         private void totalReward()
@@ -82,9 +84,10 @@ namespace NewMotivationHR.PL.Rewards
         private Reward Add_Reward()
         {
             totalReward();
-           // Reward reward = new Reward();
+             reward = new Reward();
             // salary= employeeSalaryBindingSource.Current as EmployeeSalary;
-            reward.Employee_id = Convert.ToInt32(Employee_idLookUpEdit.EditValue);
+            var result = Employee_idLookUpEdit.EditValue;
+            reward.Employee_id = Convert.ToInt32(result);
 
             reward.Type = (Type)Enum.Parse(typeof(Type), TypeImageComboBoxEdit.Text, true);
             reward.Reward_ = Convert.ToInt32(Reward_TextEdit.EditValue);

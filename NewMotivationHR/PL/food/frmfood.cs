@@ -49,20 +49,24 @@ namespace NewMotivationHR.PL.food
         {
             try
             {
-                if ( !string.IsNullOrEmpty(EarningWorkTextEdit.EditValue.ToString()))
+                if (!string.IsNullOrEmpty(EarningWorkTextEdit.EditValue.ToString()) &
+                    !string.IsNullOrEmpty(Employee_idLookUpEdit.EditValue.ToString()))
 
                 {
                     int value = Convert.ToInt32(Employee_idLookUpEdit.EditValue);
-                    var food = model.Employees.Where(t => t.ID == value).FirstOrDefault().Food_;
-                    Food_TextEdit.EditValue = food.ToString();
-                    //  AdministrativeTextEdit.EditValue = (20 - (((Convert.ToInt32(AbsenceDaysTextEdit.EditValue)) * 2) + ((Convert.ToInt32(VacationDaysTextEdit.EditValue)) * 1))).ToString();
-                    //TotalRate();
+                    if (value > 0)
+                    {
+                        var food = model.Employees.Where(t => t.ID == value).FirstOrDefault().Food_;
+                        Food_TextEdit.EditValue = food.ToString();
+                        //  AdministrativeTextEdit.EditValue = (20 - (((Convert.ToInt32(AbsenceDaysTextEdit.EditValue)) * 2) + ((Convert.ToInt32(VacationDaysTextEdit.EditValue)) * 1))).ToString();
+                        //TotalRate();
 
-                    //   TotalRatioTextEdit.EditValue = (Convert.ToInt32(FollowTaskTextEdit.EditValue) + Convert.ToInt32(PerformanceTextEdit.EditValue) + Convert.ToInt32(AdministrativeTextEdit.EditValue) + Convert.ToInt32(AbilityPlanTextEdit.EditValue) + Convert.ToInt32(WorkAccuracyTextEdit.EditValue)).ToString();
-                    // var erning = trans - (trans - (Convert.ToInt32(TotalRatioTextEdit.EditValue) * salary / 100));
-                    //  SalaryEvaluationTextEdit.EditValue = erning;
-                    EarningWorkTextEdit.EditValue = Convert.ToInt32(Food_TextEdit.EditValue) * 15 / 100;
-                    NetFoodTextEdit.EditValue = (Convert.ToInt32(Food_TextEdit.EditValue) - Convert.ToInt32(EarningWorkTextEdit.EditValue)).ToString();
+                        //   TotalRatioTextEdit.EditValue = (Convert.ToInt32(FollowTaskTextEdit.EditValue) + Convert.ToInt32(PerformanceTextEdit.EditValue) + Convert.ToInt32(AdministrativeTextEdit.EditValue) + Convert.ToInt32(AbilityPlanTextEdit.EditValue) + Convert.ToInt32(WorkAccuracyTextEdit.EditValue)).ToString();
+                        // var erning = trans - (trans - (Convert.ToInt32(TotalRatioTextEdit.EditValue) * salary / 100));
+                        //  SalaryEvaluationTextEdit.EditValue = erning;
+                        EarningWorkTextEdit.EditValue = Convert.ToInt32(Food_TextEdit.EditValue) * 15 / 100;
+                        NetFoodTextEdit.EditValue = (Convert.ToInt32(Food_TextEdit.EditValue) - Convert.ToInt32(EarningWorkTextEdit.EditValue)).ToString();
+                    }
                 }
             }
             catch (Exception exception)
@@ -131,10 +135,10 @@ namespace NewMotivationHR.PL.food
         private void Employee_idLookUpEdit_EditValueChanged(object sender, EventArgs e)
         {
             var netsalary = NetFoodTextEdit.EditValue;
-            if (!string.IsNullOrEmpty(netsalary.ToString()))
+            if (netsalary!=null)
             //if (Convert.ToInt32( ) != 0|| NetSalaryTextEdit.EditValue !=null)
             {
-                if (!string.IsNullOrEmpty(Employee_idLookUpEdit.EditValue.ToString()) && Convert.ToInt32(Employee_idLookUpEdit.EditValue) > 0)
+                if (Employee_idLookUpEdit.EditValue !=null)
                 {
 
                     TotalFood();

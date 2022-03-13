@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraReports.UI;
+﻿using DevExpress.Xpo;
+using DevExpress.XtraReports.UI;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using NewMotivationHR.DAL;
@@ -263,24 +264,41 @@ namespace NewMotivationHR.PL.SalaryForms
            
 
         }
-        
+
 
         private void btn_bank_print_Click(object sender, EventArgs e)
         {
             frmMonth fm = new frmMonth();
             EmpModel model = new EmpModel();
             var month = MonthOfAcountImageComboBoxEdit.Text;
-           // var repData = model.EmployeeSalaries.Where(x => x.MonthOfAcount.ToString() == month&&x.DateOfEnteriy.Year.ToString()==txt_year.Text).Include("Employee").ToList();
-            var repData = model.EmployeeSalaries.Where(x => x.MonthOfAcount.ToString() == month&&x.DateOfEnteriy.Year.ToString()==txt_year.Text).Include("Employee").ToList();
-            if (repData != null)
+            var repData2 = model.Employees.ToListAsync().Result;
+            List<Employee> employees = new List<Employee>();
+
+            foreach (var item in repData2)
+            {
+                employees.Add(new Employee
+                {
+                    Emp_ID =item.Emp_ID,
+                    Name=item.Name,
+                    Salary =item.Salary,
+                    TBSalaries =item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).ToList(),
+                    Foods =item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).ToList(),
+                    Transportations = item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).ToList(),
+                    Rewards=item.Rewards
+                });
+            }
+        
+            //var repData = model.EmployeeSalaries.Where(x => x.MonthOfAcount.ToString() == month&&x.DateOfEnteriy.Year.ToString()==txt_year.Text).Include("Employee").ToList();
+            if (employees != null)
             {
               //  var repData1 = model.ToList();
                     //.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).Include("Employee").ToList();
 
                 // Motivation_Report2 motivation_Report = new Motivation_Report2();
                 // Motivation_Report_Bank motivation_Report = new Motivation_Report_Bank();
+
                 Bank_Report motivation_Report = new Bank_Report();
-                motivation_Report.DataSource = repData.ToList();
+                motivation_Report.DataSource = employees;
                 motivation_Report.ShowPreviewDialog();
             }
         }
