@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -90,6 +91,9 @@
     <Compile Include="DB\EmployeeSalary.cs" />
     <Compile Include="DB\Employee.cs" />
     <Compile Include="DB\Enume\Month.cs" />
+    <Compile Include="DB\Reward.cs" />
+    <Compile Include="DB\food.cs" />
+    <Compile Include="DB\Transportation.cs" />
     <Compile Include="DB\User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -117,12 +121,54 @@
     <Compile Include="Migrations\202203060757444_AFTER_ALTER_TABLE_SALARY.designer.cs">
       <DependentUpon>202203060757444_AFTER_ALTER_TABLE_SALARY.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203081756335_Add_Transportation_table.cs" />
+    <Compile Include="Migrations\202203081756335_Add_Transportation_table.designer.cs">
+      <DependentUpon>202203081756335_Add_Transportation_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203110751276_EmptyMigration.cs" />
+    <Compile Include="Migrations\202203110751276_EmptyMigration.designer.cs">
+      <DependentUpon>202203110751276_EmptyMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203120431262_add_food_table.cs" />
+    <Compile Include="Migrations\202203120431262_add_food_table.designer.cs">
+      <DependentUpon>202203120431262_add_food_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203120510543_add_food_to_Model.cs" />
+    <Compile Include="Migrations\202203120510543_add_food_to_Model.designer.cs">
+      <DependentUpon>202203120510543_add_food_to_Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203120548074_add_relation.cs" />
+    <Compile Include="Migrations\202203120548074_add_relation.designer.cs">
+      <DependentUpon>202203120548074_add_relation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203120849148_add_Reward_table.cs" />
+    <Compile Include="Migrations\202203120849148_add_Reward_table.designer.cs">
+      <DependentUpon>202203120849148_add_Reward_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PL\EmployeeForms\EmployeeManeg.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\EmployeeForms\EmployeeManeg.Designer.cs">
       <DependentUpon>EmployeeManeg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\food\frmfood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\food\frmfood.Designer.cs">
+      <DependentUpon>frmfood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Rewards\frmReward.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Rewards\frmReward.Designer.cs">
+      <DependentUpon>frmReward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Transportation\frmTransportation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Transportation\frmTransportation.Designer.cs">
+      <DependentUpon>frmTransportation.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\User\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -186,8 +232,35 @@
     <EmbeddedResource Include="Migrations\202203060757444_AFTER_ALTER_TABLE_SALARY.resx">
       <DependentUpon>202203060757444_AFTER_ALTER_TABLE_SALARY.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203081756335_Add_Transportation_table.resx">
+      <DependentUpon>202203081756335_Add_Transportation_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203110751276_EmptyMigration.resx">
+      <DependentUpon>202203110751276_EmptyMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203120431262_add_food_table.resx">
+      <DependentUpon>202203120431262_add_food_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203120510543_add_food_to_Model.resx">
+      <DependentUpon>202203120510543_add_food_to_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203120548074_add_relation.resx">
+      <DependentUpon>202203120548074_add_relation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203120849148_add_Reward_table.resx">
+      <DependentUpon>202203120849148_add_Reward_table.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\EmployeeForms\EmployeeManeg.resx">
       <DependentUpon>EmployeeManeg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\food\frmfood.resx">
+      <DependentUpon>frmfood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Rewards\frmReward.resx">
+      <DependentUpon>frmReward.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Transportation\frmTransportation.resx">
+      <DependentUpon>frmTransportation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\User\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -223,6 +296,9 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\NewMotivationHR.DB.Employee.datasource" />
     <None Include="Properties\DataSources\NewMotivationHR.DB.EmployeeSalary.datasource" />
+    <None Include="Properties\DataSources\NewMotivationHR.DB.Food.datasource" />
+    <None Include="Properties\DataSources\NewMotivationHR.DB.Reward.datasource" />
+    <None Include="Properties\DataSources\NewMotivationHR.DB.Transportation.datasource" />
     <None Include="Properties\DataSources\NewMotivationHR.DB.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -21,4 +21,10 @@ namespace NewMotivationHR.DB.Enume
         نوفمبر,
         ديسمبر
     }
+
+    public enum Type
+    {
+        مكافئة,
+        تغذية,
+    }
 }

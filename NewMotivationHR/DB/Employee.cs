@@ -17,10 +17,23 @@ namespace NewMotivationHR.DB
         public int ID { get; set; }
         [Display(Name = "الاسم")]
         public String Name { get; set; }
+
+        [Display(Name = "الادارة")]
+        public String section { get; set; }
+
         [Display(Name = "رقم الحساب")]
         public String Emp_ID { get; set; }
-        [Display(Name = "الراتب")]
+        [Display(Name = "الحافز")]
         public int Salary { get; set; }
-       public virtual List<EmployeeSalary> TBSalaries { get; set; }
+        [Display(Name = "بدل مواصلات")]
+        public int Transportation { get; set; }
+        [Display(Name = " بدل تغذية")]
+        public int Food_ { get; set; }
+
+
+        public virtual List<EmployeeSalary> TBSalaries { get; set; }
+        public virtual List<Transportation> Transportations { get; set; }
+        public virtual List<Food> Foods { get; set; }
+        public virtual List<Reward> Rewards { get; set; }
     }
 }

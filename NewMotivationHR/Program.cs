@@ -1,9 +1,12 @@
-﻿using NewMotivationHR.DB;
+﻿using NewMotivationHR.DAL.Model;
+using NewMotivationHR.DB;
+using NewMotivationHR.PL.User;
 using NewMotivationHR.PL;
 using NewMotivationHR.PL.SalaryForms;
-using NewMotivationHR.PL.User;
+
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,15 +23,16 @@ namespace NewMotivationHR
         [STAThread]
         static void Main()
         {
-            
+           
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+           // Database.SetInitializer<EmpModel>(new DropCreateDatabaseIfModelChanges<EmpModel>());
             Application.Run(new FrmLogin());
             if (LogInUser)
             {
                 Application.Run(new Form1());
             }
+           
         }
     }
     

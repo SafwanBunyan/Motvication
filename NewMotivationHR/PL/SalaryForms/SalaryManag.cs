@@ -36,10 +36,10 @@ namespace NewMotivationHR.PL.SalaryForms
             Employee_idLookUpEdit.Properties.ValueMember = "ID";
         }
 
-        private int TotalRate()
-        {
-            return Convert.ToInt32( TotalRatioTextEdit.EditValue = ((Convert.ToInt32(FollowTaskTextEdit.EditValue) + Convert.ToInt32(PerformanceTextEdit.EditValue) + Convert.ToInt32(AdministrativeTextEdit.EditValue) + Convert.ToInt32(AbilityPlanTextEdit.EditValue) + Convert.ToInt32(WorkAccuracyTextEdit.EditValue)).ToString()));
-        }
+        //private int TotalRate()
+        //{
+        //    return Convert.ToInt32( TotalRatioTextEdit.EditValue = ((Convert.ToInt32(FollowTaskTextEdit.EditValue) + Convert.ToInt32(PerformanceTextEdit.EditValue) + Convert.ToInt32(AdministrativeTextEdit.EditValue) + Convert.ToInt32(AbilityPlanTextEdit.EditValue) + Convert.ToInt32(WorkAccuracyTextEdit.EditValue)).ToString()));
+        //}
         private void TotalSalary()
         {
             try

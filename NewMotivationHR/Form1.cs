@@ -1,4 +1,7 @@
-﻿using NewMotivationHR.PL.SalaryForms;
+﻿using NewMotivationHR.PL.food;
+using NewMotivationHR.PL.Rewards;
+using NewMotivationHR.PL.SalaryForms;
+using NewMotivationHR.PL.Transportation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +31,24 @@ namespace NewMotivationHR
         {
             SalaryManag salary = new SalaryManag();
             salary.ShowDialog();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            frmTransportation salary = new frmTransportation();
+            salary.ShowDialog();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            frmfood frmfood = new frmfood();
+            frmfood.ShowDialog();
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            frmReward frm = new frmReward();
+            frm.ShowDialog();
         }
     }
 }
