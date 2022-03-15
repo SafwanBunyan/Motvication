@@ -196,6 +196,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\Transport\Bank_Report - Copy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Transport\Bank_Report - Copy.Designer.cs">
+      <DependentUpon>Bank_Report - Copy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Bank_Report.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -284,6 +290,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report\Transport\Bank_Report - Copy.resx">
+      <DependentUpon>Bank_Report - Copy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Bank_Report.resx">
       <DependentUpon>Bank_Report.cs</DependentUpon>
     </EmbeddedResource>

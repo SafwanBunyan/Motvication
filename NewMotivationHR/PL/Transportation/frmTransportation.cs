@@ -186,5 +186,14 @@ namespace NewMotivationHR.PL.Transportation
             month.ShowDialog();
             getdata();
         }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            frmMonth month = new frmMonth();
+            month.txt_year.Visible = false;
+            month.btn_Save.Text = "طباعة كشف المواصلات";
+            month.ShowDialog();
+            getdata();
+        }
     }
 }

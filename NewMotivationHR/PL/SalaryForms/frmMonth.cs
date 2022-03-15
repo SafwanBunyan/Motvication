@@ -19,6 +19,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NewMotivationHR.Report;
 
 namespace NewMotivationHR.PL.SalaryForms
 {
@@ -114,10 +115,7 @@ namespace NewMotivationHR.PL.SalaryForms
                         }
                         sal.getdata();
                     }
-                  else
-                    {
-                        MessageBox.Show("تاكد من شهر الاحتساب لايمكنك التكرار ");
-                    }
+                   
                 }
                 else if (btn_Save.Text == "طباعة")
                 {
@@ -255,12 +253,28 @@ namespace NewMotivationHR.PL.SalaryForms
                     }
                     frmfood.getdata();
                 }
+            else if (btn_Save.Text == "طباعة كشف المواصلات")
+            {
+                frmMonth fm = new frmMonth();
+                EmpModel model = new EmpModel();
+                var month = MonthOfAcountImageComboBoxEdit.Text;
+                var repData = model.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).Include("Employee").ToList();
+                if (repData != null)
+                {
+
+                   trans_Report2  motivation_Report = new trans_Report2();
+                    //  Bank_Report motivation_Report = new Bank_Report();
+                    motivation_Report.DataSource = repData.ToList();
+                    motivation_Report.ShowPreviewDialog();
+                }
+            }
+          
             //}
             //else
             //{
             //    MessageBox.Show("تاكد من سنة الاحتساب");
             //}
-           
+
 
         }
         

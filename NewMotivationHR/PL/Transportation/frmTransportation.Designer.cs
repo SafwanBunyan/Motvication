@@ -130,6 +130,7 @@
             this.btn_print.Size = new System.Drawing.Size(75, 23);
             this.btn_print.TabIndex = 4;
             this.btn_print.Text = "طباعة";
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_delet
             // 
