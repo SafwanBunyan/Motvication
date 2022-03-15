@@ -313,7 +313,7 @@ namespace NewMotivationHR.PL.SalaryForms
 
                 Bank_Report motivation_Report = new Bank_Report();
                 motivation_Report.DataSource = employees;
-                motivation_Report.ShowRibbonPreviewDialog();
+                motivation_Report.ShowPreviewDialog();
             }
         }
     }
