@@ -260,7 +260,7 @@
             this.table3.Name = "table3";
             this.table3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.tableRow4});
-            this.table3.SizeF = new System.Drawing.SizeF(1042F, 52.34143F);
+            this.table3.SizeF = new System.Drawing.SizeF(1043F, 52.34143F);
             this.table3.StylePriority.UseBorders = false;
             this.table3.StylePriority.UseFont = false;
             this.table3.StylePriority.UseTextAlignment = false;
@@ -746,7 +746,7 @@
             this.DataSource = this.efDataSource1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(100, 27, 100, 100);
+            this.Margins = new System.Drawing.Printing.Margins(99, 27, 100, 100);
             this.PageHeight = 827;
             this.PageWidth = 1169;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;

@@ -50,5 +50,41 @@ namespace NewMotivationHR
             frmReward frm = new frmReward();
             frm.ShowDialog();
         }
+
+        private void btn_BankReport_Click(object sender, EventArgs e)
+        {
+            frmMonth fm = new frmMonth();
+            fm.btn_Save.Text = "طباعة";
+            fm.txt_year.Visible = true;
+            fm.btn_bank_print.Visible = true;
+            fm.ShowDialog();
+        }
+
+        private void btn_trasportReport_Click(object sender, EventArgs e)
+        {
+            frmMonth fm = new frmMonth();
+            fm.btn_Save.Text = "طباعة2";
+            fm.txt_year.Visible = true;
+            fm.btn_bank_print.Visible = true;
+            fm.ShowDialog();
+        }
+
+        private void btn_MotivationReport_Click(object sender, EventArgs e)
+        {
+            frmMonth fm = new frmMonth();
+            fm.btn_Save.Text = "طباعة1";
+            fm.txt_year.Visible = true;
+            fm.btn_bank_print.Visible = true;
+            fm.ShowDialog();
+        }
+
+        private void btn_FoodReport_Click(object sender, EventArgs e)
+        {
+            frmMonth fm = new frmMonth();
+            fm.btn_Save.Text = "طباعة3";
+            fm.txt_year.Visible = true;
+            fm.btn_bank_print.Visible = true;
+            fm.ShowDialog();
+        }
     }
 }

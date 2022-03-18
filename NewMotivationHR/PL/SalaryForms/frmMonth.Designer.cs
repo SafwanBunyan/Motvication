@@ -199,7 +199,6 @@
 
         private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraEditors.ImageComboBoxEdit MonthOfAcountImageComboBoxEdit;
         private System.Windows.Forms.BindingSource employeeSalaryBindingSource;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem ItemForMonthOfAcount;
@@ -208,5 +207,6 @@
         public DevExpress.XtraEditors.SimpleButton btn_bank_print;
         public DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         public DevExpress.XtraEditors.TextEdit txt_year;
+        public DevExpress.XtraEditors.ImageComboBoxEdit MonthOfAcountImageComboBoxEdit;
     }
 }
