@@ -290,7 +290,8 @@ namespace NewMotivationHR.PL.SalaryForms
                                 Foods = item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetFood,
                                 Transportations = item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
                                 Rewards = item.Rewards.Where(x=> x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetReward,
-                                
+                                MonthOfAcount= month,
+                                DateOfEnteriy= txt_year.EditValue.ToString(),
                             });                           
                         }
 

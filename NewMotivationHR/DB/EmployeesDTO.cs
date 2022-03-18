@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.ReportServer.ServiceModel.DataContracts;
+using NewMotivationHR.DB.Enume;
 
 namespace NewMotivationHR.DB
 {
@@ -14,12 +15,14 @@ namespace NewMotivationHR.DB
         [Display(Name = "الاسم")]
         public String Name { get; set; }
 
-        [Display(Name = "الادارة")]
         public String section { get; set; }
 
-        [Display(Name = "رقم الحساب")]
         public String Emp_ID { get; set; }
-        [Display(Name = "الحافز")]
+
+        public String DateOfEnteriy { get; set; }
+
+        public String MonthOfAcount { get; set; }
+
         public int Salary { get; set; }
         public double TBSalaries { get; set; }
         public double Transportations { get; set; }
