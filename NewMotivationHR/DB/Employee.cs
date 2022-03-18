@@ -11,7 +11,10 @@ namespace NewMotivationHR.DB
     {
         public Employee()
         {
-           // this.TBSalaries = new List<TBSalary>();
+            //this.TBSalaries = new List<EmployeeSalary>();
+            //this.Transportations = new List<Transportation>();
+            //this.Foods = new List<Food>();
+            //this.Rewards = new List<Reward>();
         }
 
         public int ID { get; set; }

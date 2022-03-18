@@ -271,28 +271,27 @@ namespace NewMotivationHR.PL.SalaryForms
                     }
                     else if(btn_Save.Text == "طباعة")
                     {
+                        int value = 0;
                         frmMonth fm = new frmMonth();
                         EmpModel model = new EmpModel();
                         Bank_Report motivation_Report = new Bank_Report();
                         var month = MonthOfAcountImageComboBoxEdit.Text;
                         var repData2 = model.Employees.ToListAsync().Result;
-                        List<Employee> employees = new List<Employee>();
+                        List<EmployeesDTO> employees = new List<EmployeesDTO>();
                        
                         foreach (var item in repData2)
                         {
-                            employees.Add(new Employee
+                            employees.Add(new EmployeesDTO
                             {
                                 Emp_ID = item.Emp_ID,
                                 Name = item.Name,
                                 Salary = item.Salary,
-                                TBSalaries = item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).ToList(),
-                                Foods = item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).ToList(),
-                                Transportations = item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).ToList(),
-                                Rewards = item.Rewards
+                                TBSalaries = item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
+                                Foods = item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetFood,
+                                Transportations = item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
+                                Rewards = item.Rewards.Where(x=> x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetReward,
                                 
-                            });
-                           
-                           
+                            });                           
                         }
 
                         //var repData = model.EmployeeSalaries.Where(x => x.MonthOfAcount.ToString() == month&&x.DateOfEnteriy.Year.ToString()==txt_year.Text).Include("Employee").ToList();
