@@ -502,7 +502,7 @@
             // objectDataSource2
             // 
             this.objectDataSource2.Constructor = objectConstructorInfo1;
-            this.objectDataSource2.DataSource = typeof(NewMotivationHR.DB.EmployeesDTO);
+            this.objectDataSource2.DataSource = typeof(NewMotivationHR.DB.EmployeeDTO);
             this.objectDataSource2.Name = "objectDataSource2";
             // 
             // Bank_Report
