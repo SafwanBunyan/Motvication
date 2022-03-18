@@ -277,11 +277,11 @@ namespace NewMotivationHR.PL.SalaryForms
                         Bank_Report motivation_Report = new Bank_Report();
                         var month = MonthOfAcountImageComboBoxEdit.Text;
                         var repData2 = model.Employees.ToListAsync().Result;
-                        List<EmployeesDTO> employees = new List<EmployeesDTO>();
+                        List<EmployeeDTO> employees = new List<EmployeeDTO>();
                        
                         foreach (var item in repData2)
                         {
-                            employees.Add(new EmployeesDTO
+                            employees.Add(new EmployeeDTO
                             {
                                 Emp_ID = item.Emp_ID,
                                 Name = item.Name,

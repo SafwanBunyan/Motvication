@@ -9,10 +9,13 @@ using NewMotivationHR.DB.Enume;
 
 namespace NewMotivationHR.DB
 {
-    public class EmployeesDTO 
+    public class EmployeeDTO
     {
+        public EmployeeDTO()
+        {
+
+        }
         public int ID { get; set; }
-        [Display(Name = "الاسم")]
         public String Name { get; set; }
 
         public String section { get; set; }
@@ -23,10 +26,10 @@ namespace NewMotivationHR.DB
 
         public String MonthOfAcount { get; set; }
 
-        public int Salary { get; set; }
+        public double Salary { get; set; }
         public double TBSalaries { get; set; }
         public double Transportations { get; set; }
         public double Foods { get; set; }
         public double Rewards { get; set; }
-}
+    }
 }

@@ -88,7 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DAL.cs" />
-    <Compile Include="DB\EmployeesDTO.cs" />
+    <Compile Include="DB\EmployeeDTO.cs" />
     <Compile Include="DAL\Model\EmpModel.cs" />
     <Compile Include="DB\EmployeeSalary.cs" />
     <Compile Include="DB\Employee.cs" />
