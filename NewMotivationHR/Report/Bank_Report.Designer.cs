@@ -68,18 +68,18 @@
             this.xrTableCell35 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell36 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.efDataSource2 = new DevExpress.DataAccess.EntityFramework.EFDataSource(this.components);
-            this.objectDataSource2 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
+            this.objectDataSource2 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.efDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.efDataSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.efDataSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
@@ -232,7 +232,7 @@
             // xrLabel1
             // 
             this.xrLabel1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MonthOfAcount]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Transportations].[MonthOfAcount]")});
             this.xrLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(401.9713F, 0F);
             this.xrLabel1.Multiline = true;
@@ -411,7 +411,7 @@
             // xrTableCell5
             // 
             this.xrTableCell5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TBSalaries]+[Foods]+[Transportations]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Foods].[NetFood]+[TBSalaries].[NetSalary]+[Transportations].[NetSalary]")});
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.Text = "xrTableCell5";
@@ -421,7 +421,7 @@
             // xrTableCell4
             // 
             this.xrTableCell4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Transportations]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Ceiling([Transportations].[NetSalary])")});
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.Text = "xrTableCell4";
@@ -431,7 +431,7 @@
             // xrTableCell3
             // 
             this.xrTableCell3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TBSalaries]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "([TBSalaries].[NetSalary])")});
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.Text = "xrTableCell3";
@@ -441,7 +441,7 @@
             // xrTableCell23
             // 
             this.xrTableCell23.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Foods]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "ToDouble([Foods].[NetFood])")});
             this.xrTableCell23.Multiline = true;
             this.xrTableCell23.Name = "xrTableCell23";
             this.xrTableCell23.Text = "xrTableCell8";
@@ -475,6 +475,11 @@
             this.xrTableCell6.Text = "xrTableCell6";
             this.xrTableCell6.Weight = 0.29613911720616248D;
             // 
+            // objectDataSource1
+            // 
+            this.objectDataSource1.DataSource = typeof(NewMotivationHR.DB.Employee);
+            this.objectDataSource1.Name = "objectDataSource1";
+            // 
             // GroupHeader1
             // 
             this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -490,20 +495,15 @@
             this.efDataSource2.ConnectionParameters = efConnectionParameters2;
             this.efDataSource2.Name = "efDataSource2";
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(NewMotivationHR.DB.EmployeeSalary);
+            // 
             // objectDataSource2
             // 
             this.objectDataSource2.Constructor = objectConstructorInfo1;
             this.objectDataSource2.DataSource = typeof(NewMotivationHR.DB.EmployeeDTO);
             this.objectDataSource2.Name = "objectDataSource2";
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(NewMotivationHR.DB.EmployeeSalary);
-            // 
-            // objectDataSource1
-            // 
-            this.objectDataSource1.DataSource = typeof(NewMotivationHR.DB.Employee);
-            this.objectDataSource1.Name = "objectDataSource1";
             // 
             // Bank_Report
             // 
@@ -517,9 +517,9 @@
             this.GroupHeader1});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.bindingSource1,
-            this.objectDataSource1,
             this.efDataSource1,
             this.efDataSource2,
+            this.objectDataSource1,
             this.objectDataSource2});
             this.DataSource = this.objectDataSource2;
             this.FilterString = "[TBSalaries][[MonthOfAcount] = [MonthOfAcount]]";
@@ -533,10 +533,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.efDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.efDataSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.efDataSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
