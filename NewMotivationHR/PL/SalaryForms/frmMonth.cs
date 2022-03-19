@@ -271,7 +271,7 @@ namespace NewMotivationHR.PL.SalaryForms
                     }
                     else if(btn_Save.Text == "طباعة")
                     {
-                        int value = 0;
+                        double value = 0;
                         frmMonth fm = new frmMonth();
                         EmpModel model = new EmpModel();
                         Bank_Report motivation_Report = new Bank_Report();
@@ -286,10 +286,23 @@ namespace NewMotivationHR.PL.SalaryForms
                                 Emp_ID = item.Emp_ID,
                                 Name = item.Name,
                                 Salary = item.Salary,
-                                TBSalaries = item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
-                                Foods = item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetFood,
-                                Transportations = item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
-                                Rewards = item.Rewards.Where(x=> x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetReward,
+
+                                TBSalaries = item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault()!=null 
+                                ? item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary 
+                                :value,
+
+                                Foods = item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault()!=null 
+                                ? item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetFood
+                                : value,
+
+                                Transportations = item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault()!=null 
+                                ? item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary
+                                : value,
+
+                                Rewards = item.Rewards.Where(x => x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault()!=null 
+                                ? item.Rewards.Where(x => x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetReward
+                                : value,
+
                                 MonthOfAcount= month,
                                 DateOfEnteriy= txt_year.EditValue.ToString(),
                             });                           
