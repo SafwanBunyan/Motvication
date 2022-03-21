@@ -351,7 +351,7 @@
             this.FollowTaskTextEdit.Properties.Mask.EditMask = "N0";
             this.FollowTaskTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.FollowTaskTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.FollowTaskTextEdit.Size = new System.Drawing.Size(99, 20);
+            this.FollowTaskTextEdit.Size = new System.Drawing.Size(90, 20);
             this.FollowTaskTextEdit.StyleController = this.dataLayoutControl1;
             this.FollowTaskTextEdit.TabIndex = 4;
             this.FollowTaskTextEdit.EditValueChanged += new System.EventHandler(this.PerformanceTextEdit_EditValueChanged);
@@ -371,7 +371,7 @@
             this.AbilityPlanTextEdit.Properties.Mask.EditMask = "N0";
             this.AbilityPlanTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.AbilityPlanTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.AbilityPlanTextEdit.Size = new System.Drawing.Size(99, 20);
+            this.AbilityPlanTextEdit.Size = new System.Drawing.Size(90, 20);
             this.AbilityPlanTextEdit.StyleController = this.dataLayoutControl1;
             this.AbilityPlanTextEdit.TabIndex = 5;
             this.AbilityPlanTextEdit.EditValueChanged += new System.EventHandler(this.PerformanceTextEdit_EditValueChanged);
@@ -387,7 +387,7 @@
             this.WorkAccuracyTextEdit.Properties.Mask.EditMask = "N0";
             this.WorkAccuracyTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.WorkAccuracyTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.WorkAccuracyTextEdit.Size = new System.Drawing.Size(99, 20);
+            this.WorkAccuracyTextEdit.Size = new System.Drawing.Size(90, 20);
             this.WorkAccuracyTextEdit.StyleController = this.dataLayoutControl1;
             this.WorkAccuracyTextEdit.TabIndex = 6;
             this.WorkAccuracyTextEdit.EditValueChanged += new System.EventHandler(this.PerformanceTextEdit_EditValueChanged);
@@ -403,7 +403,7 @@
             this.PerformanceTextEdit.Properties.Mask.EditMask = "N0";
             this.PerformanceTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.PerformanceTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.PerformanceTextEdit.Size = new System.Drawing.Size(108, 20);
+            this.PerformanceTextEdit.Size = new System.Drawing.Size(99, 20);
             this.PerformanceTextEdit.StyleController = this.dataLayoutControl1;
             this.PerformanceTextEdit.TabIndex = 7;
             this.PerformanceTextEdit.EditValueChanged += new System.EventHandler(this.PerformanceTextEdit_EditValueChanged);
@@ -419,7 +419,7 @@
             this.VacationDaysTextEdit.Properties.Mask.EditMask = "N0";
             this.VacationDaysTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.VacationDaysTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.VacationDaysTextEdit.Size = new System.Drawing.Size(108, 20);
+            this.VacationDaysTextEdit.Size = new System.Drawing.Size(99, 20);
             this.VacationDaysTextEdit.StyleController = this.dataLayoutControl1;
             this.VacationDaysTextEdit.TabIndex = 8;
             this.VacationDaysTextEdit.EditValueChanged += new System.EventHandler(this.PerformanceTextEdit_EditValueChanged);
@@ -435,7 +435,7 @@
             this.AbsenceDaysTextEdit.Properties.Mask.EditMask = "N0";
             this.AbsenceDaysTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.AbsenceDaysTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.AbsenceDaysTextEdit.Size = new System.Drawing.Size(99, 20);
+            this.AbsenceDaysTextEdit.Size = new System.Drawing.Size(90, 20);
             this.AbsenceDaysTextEdit.StyleController = this.dataLayoutControl1;
             this.AbsenceDaysTextEdit.TabIndex = 9;
             this.AbsenceDaysTextEdit.EditValueChanged += new System.EventHandler(this.PerformanceTextEdit_EditValueChanged);
@@ -452,7 +452,7 @@
             this.AdministrativeTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.AdministrativeTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.AdministrativeTextEdit.Properties.ReadOnly = true;
-            this.AdministrativeTextEdit.Size = new System.Drawing.Size(99, 20);
+            this.AdministrativeTextEdit.Size = new System.Drawing.Size(90, 20);
             this.AdministrativeTextEdit.StyleController = this.dataLayoutControl1;
             this.AdministrativeTextEdit.TabIndex = 10;
             this.AdministrativeTextEdit.Click += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -468,7 +468,7 @@
             this.TotalRatioTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TotalRatioTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.TotalRatioTextEdit.Properties.ReadOnly = true;
-            this.TotalRatioTextEdit.Size = new System.Drawing.Size(99, 20);
+            this.TotalRatioTextEdit.Size = new System.Drawing.Size(90, 20);
             this.TotalRatioTextEdit.StyleController = this.dataLayoutControl1;
             this.TotalRatioTextEdit.TabIndex = 11;
             this.TotalRatioTextEdit.Click += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -484,7 +484,7 @@
             this.SalaryEvaluationTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.SalaryEvaluationTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.SalaryEvaluationTextEdit.Properties.ReadOnly = true;
-            this.SalaryEvaluationTextEdit.Size = new System.Drawing.Size(108, 20);
+            this.SalaryEvaluationTextEdit.Size = new System.Drawing.Size(99, 20);
             this.SalaryEvaluationTextEdit.StyleController = this.dataLayoutControl1;
             this.SalaryEvaluationTextEdit.TabIndex = 12;
             this.SalaryEvaluationTextEdit.Click += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -500,7 +500,7 @@
             this.EarningWorkTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.EarningWorkTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.EarningWorkTextEdit.Properties.ReadOnly = true;
-            this.EarningWorkTextEdit.Size = new System.Drawing.Size(99, 20);
+            this.EarningWorkTextEdit.Size = new System.Drawing.Size(90, 20);
             this.EarningWorkTextEdit.StyleController = this.dataLayoutControl1;
             this.EarningWorkTextEdit.TabIndex = 13;
             this.EarningWorkTextEdit.Click += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -515,7 +515,7 @@
             this.DonateTextEdit.Properties.Mask.EditMask = "N0";
             this.DonateTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.DonateTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.DonateTextEdit.Size = new System.Drawing.Size(99, 20);
+            this.DonateTextEdit.Size = new System.Drawing.Size(90, 20);
             this.DonateTextEdit.StyleController = this.dataLayoutControl1;
             this.DonateTextEdit.TabIndex = 14;
             this.DonateTextEdit.EditValueChanged += new System.EventHandler(this.PerformanceTextEdit_EditValueChanged);
@@ -532,7 +532,7 @@
             this.DiscountTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.DiscountTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.DiscountTextEdit.Properties.ReadOnly = true;
-            this.DiscountTextEdit.Size = new System.Drawing.Size(99, 20);
+            this.DiscountTextEdit.Size = new System.Drawing.Size(90, 20);
             this.DiscountTextEdit.StyleController = this.dataLayoutControl1;
             this.DiscountTextEdit.TabIndex = 15;
             this.DiscountTextEdit.Click += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -548,7 +548,7 @@
             this.NetSalaryTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.NetSalaryTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.NetSalaryTextEdit.Properties.ReadOnly = true;
-            this.NetSalaryTextEdit.Size = new System.Drawing.Size(723, 20);
+            this.NetSalaryTextEdit.Size = new System.Drawing.Size(714, 20);
             this.NetSalaryTextEdit.StyleController = this.dataLayoutControl1;
             this.NetSalaryTextEdit.TabIndex = 16;
             this.NetSalaryTextEdit.Click += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -564,7 +564,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Employee_idLookUpEdit.Properties.DropDownRows = 12;
             this.Employee_idLookUpEdit.Properties.NullText = "";
-            this.Employee_idLookUpEdit.Size = new System.Drawing.Size(313, 20);
+            this.Employee_idLookUpEdit.Size = new System.Drawing.Size(304, 20);
             this.Employee_idLookUpEdit.StyleController = this.dataLayoutControl1;
             this.Employee_idLookUpEdit.TabIndex = 18;
             this.Employee_idLookUpEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -594,7 +594,7 @@
             new DevExpress.XtraEditors.Controls.ImageComboBoxItem("نوفمبر", NewMotivationHR.DB.Enume.Month.نوفمبر, 10),
             new DevExpress.XtraEditors.Controls.ImageComboBoxItem("ديسمبر", NewMotivationHR.DB.Enume.Month.ديسمبر, 11)});
             this.MonthOfAcountImageComboBoxEdit.Properties.UseCtrlScroll = true;
-            this.MonthOfAcountImageComboBoxEdit.Size = new System.Drawing.Size(304, 20);
+            this.MonthOfAcountImageComboBoxEdit.Size = new System.Drawing.Size(295, 20);
             this.MonthOfAcountImageComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.MonthOfAcountImageComboBoxEdit.TabIndex = 19;
             this.MonthOfAcountImageComboBoxEdit.Click += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);

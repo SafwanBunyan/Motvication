@@ -1,4 +1,5 @@
-﻿using NewMotivationHR.DAL;
+﻿using Microsoft.VisualBasic;
+using NewMotivationHR.DAL;
 using NewMotivationHR.DAL.Model;
 using System;
 using System.Collections.Generic;
@@ -47,14 +48,24 @@ namespace NewMotivationHR.PL.EmployeeForms
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            using (EmpModel model = new EmpModel())
+            try
             {
-                employee = employeeBindingSource.Current as DB.Employee;
-                model.Employees.Add(employee);
-                model.SaveChanges();
-                Refresh();
-                employeeBindingSource.Clear();
-                refresh();
+                using (EmpModel model = new EmpModel())
+                {
+                    employee = employeeBindingSource.Current as DB.Employee;
+                    model.Employees.Add(employee);
+                    model.SaveChanges();
+                    Refresh();
+                    employeeBindingSource.Clear();
+                    refresh();
+                }
+            }
+            catch (Exception exception)
+            {
+                //ProjectData.SetProjectError(exception);
+                Interaction.MsgBox(exception.Message, MsgBoxStyle.OkOnly, null);
+                //ProjectData.ClearProjectError();
+                return;
             }
         }
 
@@ -92,6 +103,11 @@ namespace NewMotivationHR.PL.EmployeeForms
                 employeeBindingSource.Clear();
                 refresh();
             }
+        }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }

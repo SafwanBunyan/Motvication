@@ -187,5 +187,10 @@ namespace NewMotivationHR.PL.food
             btn_print.Visible = false;
             btn_Genrat_Salary.Visible = false;
         }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
     }
 }

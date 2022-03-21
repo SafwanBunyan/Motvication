@@ -286,25 +286,34 @@ namespace NewMotivationHR.PL.SalaryForms
                                 Emp_ID = item.Emp_ID,
                                 Name = item.Name,
                                 Salary = item.Salary,
-                                TBSalaries = item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
-                                Foods = item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetFood,
-                                Transportations = item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
-                                Rewards = item.Rewards.Where(x=> x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetReward,
-                                MonthOfAcount= month,
+                                ////TBSalaries = item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
+                                ////Foods = item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetFood,
+                                ////Transportations = item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
+                                ////Rewards = item.Rewards.Where(x=> x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetReward,
+
+                                TBSalaries = item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault() != null
+                                ? item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary
+                                : value,
+
+                                Foods = item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault() != null
+                                ? item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetFood
+                                : value,
+
+                                Transportations = item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault() != null
+                                ? item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary
+                                : value,
+
+                                Rewards = item.Rewards.Where(x => x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault() != null
+                                ? item.Rewards.Where(x => x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetReward
+                                : value,
+
+                                MonthOfAcount = month,
                                 DateOfEnteriy= txt_year.EditValue.ToString(),
                             });                           
                         }
 
-                        //var repData = model.EmployeeSalaries.Where(x => x.MonthOfAcount.ToString() == month&&x.DateOfEnteriy.Year.ToString()==txt_year.Text).Include("Employee").ToList();
                         if (employees != null)
-                        {
-                            //  var repData1 = model.ToList();
-                            //.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).Include("Employee").ToList();
-
-                            // Motivation_Report2 motivation_Report = new Motivation_Report2();
-                            // Motivation_Report_Bank motivation_Report = new Motivation_Report_Bank();
-
-                           
+                        {                           
                             motivation_Report.DataSource = employees;
                             motivation_Report.ShowPreviewDialog();
                         }

@@ -157,7 +157,7 @@ namespace NewMotivationHR.PL.SalaryForms
         private void Employee_idLookUpEdit_EditValueChanged(object sender, EventArgs e)
         {
             var netsalary = NetSalaryTextEdit.EditValue;
-            if(!string.IsNullOrEmpty(netsalary.ToString()))
+            if (netsalary != null)
             //if (Convert.ToInt32( ) != 0|| NetSalaryTextEdit.EditValue !=null)
             {
                 if (!string.IsNullOrEmpty(Employee_idLookUpEdit.EditValue.ToString()) && Convert.ToInt32(Employee_idLookUpEdit.EditValue) > 0)
