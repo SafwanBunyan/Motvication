@@ -109,5 +109,10 @@ namespace NewMotivationHR.PL.EmployeeForms
         {
             gridControl1.ShowRibbonPrintPreview();
         }
+
+        private void EmployeeManeg_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

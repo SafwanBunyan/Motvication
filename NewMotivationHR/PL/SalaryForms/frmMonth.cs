@@ -20,7 +20,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NewMotivationHR.Report;
 
 namespace NewMotivationHR.PL.SalaryForms
 {
@@ -68,19 +67,19 @@ namespace NewMotivationHR.PL.SalaryForms
                                 Salarylist.Add(new EmployeeSalary
                                 {
                                     Employee_id = item.ID,
-                                    SalaryEvaluation = item.Salary,
-                                    EarningWork = item.Salary * 15 / 100,
-                                    TotalRatio = 100,
+                                    //SalaryEvaluation = item.Salary,
+                                   // EarningWork = item.Salary * 15 / 100,
+                                   // TotalRatio = 100,
                                     Donate = 0,
-                                    Discount = item.Salary * 15 / 100,
-                                    NetSalary = item.Salary * 85 / 100,
+                                    //Discount = item.Salary * 15 / 100,
+                                   // NetSalary = item.Salary * 85 / 100,
                                     FollowTask = 20,
                                     AbilityPlan = 20,
                                     Performance = 20,
                                     WorkAccuracy = 20,
                                     VacationDays = 0,
                                     AbsenceDays = 0,
-                                    Administrative = 20,
+                                    //Administrative = 20,
                                     MonthOfAcount = month
                                     // Month = Convert.ToDateTime(dateEdit1.Text)
                                 }); ;
@@ -137,9 +136,9 @@ namespace NewMotivationHR.PL.SalaryForms
                                 {
                                     Employee_id = item.ID,
                                     Transportation_befor = item.Transportation,
-                                    EarningWork = item.Transportation * 15 / 100,
-                                    Discount = item.Transportation * 15 / 100,
-                                    NetSalary = item.Transportation * 85 / 100,
+                                    //EarningWork = item.Transportation * 15 / 100,
+                                    //Discount = item.Transportation * 15 / 100,
+                                    //NetSalary = item.Transportation * 85 / 100,
                                     AbsenceDays = 0,
                                     MonthOfAcount = month
                                     // Month = Convert.ToDateTime(dateEdit1.Text)
@@ -197,9 +196,9 @@ namespace NewMotivationHR.PL.SalaryForms
                                 {
                                     Employee_id = item.ID,
                                     Food_ = item.Food_,
-                                    EarningWork = item.Food_ * 15 / 100,
+                                    //EarningWork = item.Food_ * 15 / 100,
 
-                                    NetFood = item.Food_ * 85 / 100,
+                                    //NetFood = item.Food_ * 85 / 100,
 
                                     MonthOfAcount = month
                                     // Month = Convert.ToDateTime(dateEdit1.Text)

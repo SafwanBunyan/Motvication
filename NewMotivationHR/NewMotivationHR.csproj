@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DAL.cs" />
+    <Compile Include="DB\EmployeeData.cs" />
     <Compile Include="DB\EmployeeDTO.cs" />
     <Compile Include="DAL\Model\EmpModel.cs" />
     <Compile Include="DB\EmployeeSalary.cs" />
@@ -146,6 +147,14 @@
     <Compile Include="Migrations\202203120849148_add_Reward_table.cs" />
     <Compile Include="Migrations\202203120849148_add_Reward_table.designer.cs">
       <DependentUpon>202203120849148_add_Reward_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203251533005_update3colum.cs" />
+    <Compile Include="Migrations\202203251533005_update3colum.designer.cs">
+      <DependentUpon>202203251533005_update3colum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203251609091_updatemenyColum.cs" />
+    <Compile Include="Migrations\202203251609091_updatemenyColum.designer.cs">
+      <DependentUpon>202203251609091_updatemenyColum.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PL\EmployeeForms\EmployeeManeg.cs">
@@ -269,6 +278,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203120849148_add_Reward_table.resx">
       <DependentUpon>202203120849148_add_Reward_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203251533005_update3colum.resx">
+      <DependentUpon>202203251533005_update3colum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203251609091_updatemenyColum.resx">
+      <DependentUpon>202203251609091_updatemenyColum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\EmployeeForms\EmployeeManeg.resx">
       <DependentUpon>EmployeeManeg.cs</DependentUpon>

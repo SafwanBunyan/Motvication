@@ -83,7 +83,7 @@ namespace NewMotivationHR.PL.Rewards
 
         private Reward Add_Reward()
         {
-            totalReward();
+            //totalReward();
              reward = new Reward();
             // salary= employeeSalaryBindingSource.Current as EmployeeSalary;
             var result = Employee_idLookUpEdit.EditValue;
@@ -91,9 +91,9 @@ namespace NewMotivationHR.PL.Rewards
 
             reward.Type = (Type)Enum.Parse(typeof(Type), TypeImageComboBoxEdit.Text, true);
             reward.Reward_ = Convert.ToInt32(Reward_TextEdit.EditValue);
-           reward.NetReward= Convert.ToInt32(NetRewardTextEdit.EditValue);
+           //reward.NetReward= Convert.ToInt32(NetRewardTextEdit.EditValue);
            
-            reward.EarningWork = Convert.ToInt32(EarningWorkTextEdit.EditValue);
+           // reward.EarningWork = Convert.ToInt32(EarningWorkTextEdit.EditValue);
 
 
             return reward;
@@ -139,21 +139,21 @@ namespace NewMotivationHR.PL.Rewards
         {
             try
             {
-               // var netsalary = NetRewardTextEdit.EditValue;
-                if (!string.IsNullOrEmpty(Employee_idLookUpEdit.Text))
-                //if (Convert.ToInt32( ) != 0|| NetSalaryTextEdit.EditValue !=null)
-                //{
-                    if (!string.IsNullOrEmpty(Employee_idLookUpEdit.EditValue.ToString()) && Convert.ToInt32(Employee_idLookUpEdit.EditValue) > 0)
-                    {
+               //// var netsalary = NetRewardTextEdit.EditValue;
+               // if (!string.IsNullOrEmpty(Employee_idLookUpEdit.Text))
+               // //if (Convert.ToInt32( ) != 0|| NetSalaryTextEdit.EditValue !=null)
+               // //{
+               //     if (!string.IsNullOrEmpty(Employee_idLookUpEdit.EditValue.ToString()) && Convert.ToInt32(Employee_idLookUpEdit.EditValue) > 0)
+               //     {
 
-                        totalReward();
+               //         totalReward();
 
-                    }
-                else
-                    {
+               //     }
+               // else
+               //     {
 
-                        MessageBox.Show("ddddddddddddd");
-                    }
+               //         MessageBox.Show("ddddddddddddd");
+               //     }
                 //}
             }
             catch (Exception exception)
