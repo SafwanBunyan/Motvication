@@ -47,6 +47,7 @@
             this.colNetReward = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDateOfEnteriy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Employee_idLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
+            this.rewardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TypeImageComboBoxEdit = new DevExpress.XtraEditors.ImageComboBoxEdit();
             this.Reward_TextEdit = new DevExpress.XtraEditors.TextEdit();
             this.EarningWorkTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -59,7 +60,6 @@
             this.ItemForNetReward = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForEarningWork = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.rewardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
@@ -68,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rewardBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Employee_idLookUpEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rewardBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TypeImageComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reward_TextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EarningWorkTextEdit.Properties)).BeginInit();
@@ -80,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForNetReward)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForEarningWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rewardBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +104,7 @@
             this.btn_print.Size = new System.Drawing.Size(75, 23);
             this.btn_print.TabIndex = 4;
             this.btn_print.Text = "طباعة";
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_delet
             // 
@@ -247,9 +248,13 @@
             this.Employee_idLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Employee_idLookUpEdit.Properties.NullText = "";
-            this.Employee_idLookUpEdit.Size = new System.Drawing.Size(312, 20);
+            this.Employee_idLookUpEdit.Size = new System.Drawing.Size(303, 20);
             this.Employee_idLookUpEdit.StyleController = this.dataLayoutControl1;
             this.Employee_idLookUpEdit.TabIndex = 4;
+            // 
+            // rewardBindingSource
+            // 
+            this.rewardBindingSource.DataSource = typeof(NewMotivationHR.DB.Reward);
             // 
             // TypeImageComboBoxEdit
             // 
@@ -264,7 +269,7 @@
             new DevExpress.XtraEditors.Controls.ImageComboBoxItem("مكافئة", NewMotivationHR.DB.Enume.Type.مكافئة, 0),
             new DevExpress.XtraEditors.Controls.ImageComboBoxItem("تغذية", NewMotivationHR.DB.Enume.Type.تغذية, 1)});
             this.TypeImageComboBoxEdit.Properties.UseCtrlScroll = true;
-            this.TypeImageComboBoxEdit.Size = new System.Drawing.Size(334, 20);
+            this.TypeImageComboBoxEdit.Size = new System.Drawing.Size(325, 20);
             this.TypeImageComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.TypeImageComboBoxEdit.TabIndex = 5;
             this.TypeImageComboBoxEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -280,7 +285,7 @@
             this.Reward_TextEdit.Properties.Mask.EditMask = "N0";
             this.Reward_TextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.Reward_TextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.Reward_TextEdit.Size = new System.Drawing.Size(175, 20);
+            this.Reward_TextEdit.Size = new System.Drawing.Size(166, 20);
             this.Reward_TextEdit.StyleController = this.dataLayoutControl1;
             this.Reward_TextEdit.TabIndex = 6;
             this.Reward_TextEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -297,7 +302,7 @@
             this.EarningWorkTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.EarningWorkTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.EarningWorkTextEdit.Properties.ReadOnly = true;
-            this.EarningWorkTextEdit.Size = new System.Drawing.Size(193, 20);
+            this.EarningWorkTextEdit.Size = new System.Drawing.Size(184, 20);
             this.EarningWorkTextEdit.StyleController = this.dataLayoutControl1;
             this.EarningWorkTextEdit.TabIndex = 7;
             this.EarningWorkTextEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -314,7 +319,7 @@
             this.NetRewardTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.NetRewardTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.NetRewardTextEdit.Properties.ReadOnly = true;
-            this.NetRewardTextEdit.Size = new System.Drawing.Size(211, 20);
+            this.NetRewardTextEdit.Size = new System.Drawing.Size(202, 20);
             this.NetRewardTextEdit.StyleController = this.dataLayoutControl1;
             this.NetRewardTextEdit.TabIndex = 8;
             this.NetRewardTextEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -394,10 +399,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // rewardBindingSource
-            // 
-            this.rewardBindingSource.DataSource = typeof(NewMotivationHR.DB.Reward);
-            // 
             // employeeBindingSource
             // 
             this.employeeBindingSource.DataSource = typeof(NewMotivationHR.DB.Employee);
@@ -420,6 +421,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rewardBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Employee_idLookUpEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rewardBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TypeImageComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reward_TextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EarningWorkTextEdit.Properties)).EndInit();
@@ -432,7 +434,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForNetReward)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForEarningWork)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rewardBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
 

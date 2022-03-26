@@ -1,4 +1,6 @@
-﻿using NewMotivationHR.DB.Enume;
+﻿using DevExpress.Utils.Extensions;
+using NewMotivationHR.DAL.Model;
+using NewMotivationHR.DB.Enume;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +14,7 @@ namespace NewMotivationHR.DB
 {
    public class EmployeeSalary
     {
+
         //public EmployeeSalary()
         //{
         //   // this.SalaryEvaluation = Convert.ToInt32(salary.SalaryEvaluationTextEdit.Text);
@@ -39,21 +42,58 @@ namespace NewMotivationHR.DB
 
         [Display(Name = "الضبط الاداري", GroupName = "التقييم")]
         [DefaultValue(20)]
-        public int Administrative { get; set; } = 20;
+        public int Administrative
+        {
+            get
+            {
+                return (20 - (((AbsenceDays) * 2) + (VacationDays) * 1));
+            }
+        }
         [Display(Name = "الاجمالي", GroupName = "التقييم"),]
-        public int TotalRatio { get; set; } 
+        public int TotalRatio
+        {
+            get
+            {
+                return (FollowTask) + Performance+ WorkAccuracy+ AbilityPlan + Administrative;
+            }
+        }
         [Display(Name = "الحافز بعد التقييم")]
-        public int SalaryEvaluation { get; set; } = 0;
+        public int SalaryEvaluation
+        {
+            get
+            {
+                return Employee_id != 0 ? (GetData(Employee_id) - (GetData(Employee_id) - (TotalRatio) * GetData(Employee_id) / 100)) : 0;
+            }
+        }
         [Display(Name = "كسب عمل")]
         [ReadOnly(true)]
-        public int EarningWork { get; set; } = 0;
+        public int EarningWork
+        {
+            get
+            {
+                return (SalaryEvaluation) * 15 / 100;
+            }
+        }
         [Display(Name = "تبرع")]
         public int Donate { get; set; } = 0;
         [Display(Name = "الاستقطاعات")]
-        public int Discount { get; set; } = 0;
+        public int Discount
+        {
+            get
+            {
+                return (EarningWork) + Donate;
+            }
+        }
         [Display(Name = "الصافي")]
-        public int NetSalary { get; set; } = 0;
-        [Display(Name = "التاريخ")]
+        public int NetSalary
+        {
+            get
+            {
+                return (SalaryEvaluation) -Discount;
+
+            }
+        }
+         [Display(Name = "التاريخ")]
         public DateTime DateOfEnteriy { get; set; } = DateTime.Now; 
         [Display(Name = "اسم الموظف")]
 
@@ -62,5 +102,18 @@ namespace NewMotivationHR.DB
         [Display(Name = "شهر الاحتساب")]
         public Month MonthOfAcount { get; set; }
         public Employee Employee { get; set; }
+        private int GetData(int id)
+        {
+            if (Employee == null)
+            {
+                EmpModel model = new EmpModel();
+                var salary = model.Employees.Where(q => q.ID == id).FirstOrDefault().Salary;
+                return salary == 0 ? 0 : salary;
+            }
+            else
+            {
+                return Employee.Salary;
+            }
+        }
     }
 }

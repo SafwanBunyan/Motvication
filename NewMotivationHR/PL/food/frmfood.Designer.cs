@@ -116,6 +116,7 @@
             this.btn_print.Size = new System.Drawing.Size(75, 23);
             this.btn_print.TabIndex = 4;
             this.btn_print.Text = "طباعة";
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_delet
             // 
@@ -253,7 +254,7 @@
             // 
             // colEmployee
             // 
-            this.colEmployee.FieldName = "Employee";
+            this.colEmployee.FieldName = "Employee_id";
             this.colEmployee.Name = "colEmployee";
             this.colEmployee.Visible = true;
             this.colEmployee.VisibleIndex = 7;
@@ -281,7 +282,7 @@
             new DevExpress.XtraEditors.Controls.ImageComboBoxItem("نوفمبر", NewMotivationHR.DB.Enume.Month.نوفمبر, 10),
             new DevExpress.XtraEditors.Controls.ImageComboBoxItem("ديسمبر", NewMotivationHR.DB.Enume.Month.ديسمبر, 11)});
             this.MonthOfAcountImageComboBoxEdit.Properties.UseCtrlScroll = true;
-            this.MonthOfAcountImageComboBoxEdit.Size = new System.Drawing.Size(313, 20);
+            this.MonthOfAcountImageComboBoxEdit.Size = new System.Drawing.Size(304, 20);
             this.MonthOfAcountImageComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.MonthOfAcountImageComboBoxEdit.TabIndex = 5;
             this.MonthOfAcountImageComboBoxEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -302,7 +303,7 @@
             this.Food_TextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.Food_TextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.Food_TextEdit.Properties.ReadOnly = true;
-            this.Food_TextEdit.Size = new System.Drawing.Size(200, 20);
+            this.Food_TextEdit.Size = new System.Drawing.Size(191, 20);
             this.Food_TextEdit.StyleController = this.dataLayoutControl1;
             this.Food_TextEdit.TabIndex = 6;
             this.Food_TextEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -319,7 +320,7 @@
             this.EarningWorkTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.EarningWorkTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.EarningWorkTextEdit.Properties.ReadOnly = true;
-            this.EarningWorkTextEdit.Size = new System.Drawing.Size(204, 20);
+            this.EarningWorkTextEdit.Size = new System.Drawing.Size(195, 20);
             this.EarningWorkTextEdit.StyleController = this.dataLayoutControl1;
             this.EarningWorkTextEdit.TabIndex = 7;
             this.EarningWorkTextEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -336,7 +337,7 @@
             this.NetFoodTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.NetFoodTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.NetFoodTextEdit.Properties.ReadOnly = true;
-            this.NetFoodTextEdit.Size = new System.Drawing.Size(145, 20);
+            this.NetFoodTextEdit.Size = new System.Drawing.Size(136, 20);
             this.NetFoodTextEdit.StyleController = this.dataLayoutControl1;
             this.NetFoodTextEdit.TabIndex = 8;
             this.NetFoodTextEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -352,7 +353,7 @@
             this.Employee_idLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Employee_idLookUpEdit.Properties.NullText = "";
-            this.Employee_idLookUpEdit.Size = new System.Drawing.Size(313, 20);
+            this.Employee_idLookUpEdit.Size = new System.Drawing.Size(304, 20);
             this.Employee_idLookUpEdit.StyleController = this.dataLayoutControl1;
             this.Employee_idLookUpEdit.TabIndex = 10;
             this.Employee_idLookUpEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -447,6 +448,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.Text = "frmfood";
+            this.Load += new System.EventHandler(this.frmfood_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);

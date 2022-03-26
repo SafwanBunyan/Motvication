@@ -39,12 +39,14 @@
             this.colsection = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSalary = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTransportation = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFood_ = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Emp_IDTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.SalaryTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.TransportationTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.sectionTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.Food_TextEdit = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForName = new DevExpress.XtraLayout.LayoutControlItem();
@@ -53,16 +55,14 @@
             this.ItemForSalary = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForTransportation = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForsection = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForFood_ = new DevExpress.XtraLayout.LayoutControlItem();
+            this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_print = new DevExpress.XtraEditors.SimpleButton();
             this.btn_delet = new DevExpress.XtraEditors.SimpleButton();
             this.btn_edit = new DevExpress.XtraEditors.SimpleButton();
             this.btn_save = new DevExpress.XtraEditors.SimpleButton();
             this.btn_new = new DevExpress.XtraEditors.SimpleButton();
-            this.Food_TextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.ItemForFood_ = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
-            this.colFood_ = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -74,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SalaryTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TransportationTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sectionTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Food_TextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForName)).BeginInit();
@@ -82,10 +83,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForSalary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTransportation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForsection)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Food_TextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFood_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataLayoutControl1
@@ -178,12 +178,19 @@
             this.colTransportation.Visible = true;
             this.colTransportation.VisibleIndex = 5;
             // 
+            // colFood_
+            // 
+            this.colFood_.FieldName = "Food_";
+            this.colFood_.Name = "colFood_";
+            this.colFood_.Visible = true;
+            this.colFood_.VisibleIndex = 6;
+            // 
             // NameTextEdit
             // 
             this.NameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.employeeBindingSource, "Name", true));
             this.NameTextEdit.Location = new System.Drawing.Point(535, 12);
             this.NameTextEdit.Name = "NameTextEdit";
-            this.NameTextEdit.Size = new System.Drawing.Size(191, 20);
+            this.NameTextEdit.Size = new System.Drawing.Size(182, 20);
             this.NameTextEdit.StyleController = this.dataLayoutControl1;
             this.NameTextEdit.TabIndex = 4;
             // 
@@ -196,7 +203,7 @@
             this.Emp_IDTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.employeeBindingSource, "Emp_ID", true));
             this.Emp_IDTextEdit.Location = new System.Drawing.Point(289, 12);
             this.Emp_IDTextEdit.Name = "Emp_IDTextEdit";
-            this.Emp_IDTextEdit.Size = new System.Drawing.Size(180, 20);
+            this.Emp_IDTextEdit.Size = new System.Drawing.Size(171, 20);
             this.Emp_IDTextEdit.StyleController = this.dataLayoutControl1;
             this.Emp_IDTextEdit.TabIndex = 5;
             // 
@@ -210,7 +217,7 @@
             this.SalaryTextEdit.Properties.Mask.EditMask = "N0";
             this.SalaryTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.SalaryTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.SalaryTextEdit.Size = new System.Drawing.Size(191, 20);
+            this.SalaryTextEdit.Size = new System.Drawing.Size(182, 20);
             this.SalaryTextEdit.StyleController = this.dataLayoutControl1;
             this.SalaryTextEdit.TabIndex = 6;
             // 
@@ -224,7 +231,7 @@
             this.TransportationTextEdit.Properties.Mask.EditMask = "N0";
             this.TransportationTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TransportationTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.TransportationTextEdit.Size = new System.Drawing.Size(180, 20);
+            this.TransportationTextEdit.Size = new System.Drawing.Size(171, 20);
             this.TransportationTextEdit.StyleController = this.dataLayoutControl1;
             this.TransportationTextEdit.TabIndex = 9;
             // 
@@ -233,9 +240,23 @@
             this.sectionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.employeeBindingSource, "section", true));
             this.sectionTextEdit.Location = new System.Drawing.Point(12, 12);
             this.sectionTextEdit.Name = "sectionTextEdit";
-            this.sectionTextEdit.Size = new System.Drawing.Size(211, 20);
+            this.sectionTextEdit.Size = new System.Drawing.Size(202, 20);
             this.sectionTextEdit.StyleController = this.dataLayoutControl1;
             this.sectionTextEdit.TabIndex = 10;
+            // 
+            // Food_TextEdit
+            // 
+            this.Food_TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.employeeBindingSource, "Food_", true));
+            this.Food_TextEdit.Location = new System.Drawing.Point(12, 36);
+            this.Food_TextEdit.Name = "Food_TextEdit";
+            this.Food_TextEdit.Properties.Appearance.Options.UseTextOptions = true;
+            this.Food_TextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.Food_TextEdit.Properties.Mask.EditMask = "N0";
+            this.Food_TextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.Food_TextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.Food_TextEdit.Size = new System.Drawing.Size(202, 20);
+            this.Food_TextEdit.StyleController = this.dataLayoutControl1;
+            this.Food_TextEdit.TabIndex = 11;
             // 
             // Root
             // 
@@ -313,6 +334,21 @@
             this.ItemForsection.Size = new System.Drawing.Size(277, 24);
             this.ItemForsection.TextSize = new System.Drawing.Size(59, 13);
             // 
+            // ItemForFood_
+            // 
+            this.ItemForFood_.Control = this.Food_TextEdit;
+            this.ItemForFood_.Location = new System.Drawing.Point(0, 24);
+            this.ItemForFood_.Name = "ItemForFood_";
+            this.ItemForFood_.Size = new System.Drawing.Size(277, 24);
+            this.ItemForFood_.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // simpleSeparator1
+            // 
+            this.simpleSeparator1.AllowHotTrack = false;
+            this.simpleSeparator1.Location = new System.Drawing.Point(0, 383);
+            this.simpleSeparator1.Name = "simpleSeparator1";
+            this.simpleSeparator1.Size = new System.Drawing.Size(780, 1);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_print);
@@ -333,6 +369,7 @@
             this.btn_print.Size = new System.Drawing.Size(75, 23);
             this.btn_print.TabIndex = 4;
             this.btn_print.Text = "طباعة";
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_delet
             // 
@@ -370,42 +407,6 @@
             this.btn_new.Text = "جديد";
             this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
             // 
-            // Food_TextEdit
-            // 
-            this.Food_TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.employeeBindingSource, "Food_", true));
-            this.Food_TextEdit.Location = new System.Drawing.Point(12, 36);
-            this.Food_TextEdit.Name = "Food_TextEdit";
-            this.Food_TextEdit.Properties.Appearance.Options.UseTextOptions = true;
-            this.Food_TextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.Food_TextEdit.Properties.Mask.EditMask = "N0";
-            this.Food_TextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.Food_TextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.Food_TextEdit.Size = new System.Drawing.Size(211, 20);
-            this.Food_TextEdit.StyleController = this.dataLayoutControl1;
-            this.Food_TextEdit.TabIndex = 11;
-            // 
-            // ItemForFood_
-            // 
-            this.ItemForFood_.Control = this.Food_TextEdit;
-            this.ItemForFood_.Location = new System.Drawing.Point(0, 24);
-            this.ItemForFood_.Name = "ItemForFood_";
-            this.ItemForFood_.Size = new System.Drawing.Size(277, 24);
-            this.ItemForFood_.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // simpleSeparator1
-            // 
-            this.simpleSeparator1.AllowHotTrack = false;
-            this.simpleSeparator1.Location = new System.Drawing.Point(0, 383);
-            this.simpleSeparator1.Name = "simpleSeparator1";
-            this.simpleSeparator1.Size = new System.Drawing.Size(780, 1);
-            // 
-            // colFood_
-            // 
-            this.colFood_.FieldName = "Food_";
-            this.colFood_.Name = "colFood_";
-            this.colFood_.Visible = true;
-            this.colFood_.VisibleIndex = 6;
-            // 
             // EmployeeManeg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,6 +420,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة الموظفين";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.EmployeeManeg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -430,6 +432,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SalaryTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TransportationTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sectionTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Food_TextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForName)).EndInit();
@@ -438,10 +441,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForSalary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTransportation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForsection)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Food_TextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFood_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -20,7 +20,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NewMotivationHR.Report;
 
 namespace NewMotivationHR.PL.SalaryForms
 {
@@ -68,19 +67,19 @@ namespace NewMotivationHR.PL.SalaryForms
                                 Salarylist.Add(new EmployeeSalary
                                 {
                                     Employee_id = item.ID,
-                                    SalaryEvaluation = item.Salary,
-                                    EarningWork = item.Salary * 15 / 100,
-                                    TotalRatio = 100,
+                                    //SalaryEvaluation = item.Salary,
+                                   // EarningWork = item.Salary * 15 / 100,
+                                   // TotalRatio = 100,
                                     Donate = 0,
-                                    Discount = item.Salary * 15 / 100,
-                                    NetSalary = item.Salary * 85 / 100,
+                                    //Discount = item.Salary * 15 / 100,
+                                   // NetSalary = item.Salary * 85 / 100,
                                     FollowTask = 20,
                                     AbilityPlan = 20,
                                     Performance = 20,
                                     WorkAccuracy = 20,
                                     VacationDays = 0,
                                     AbsenceDays = 0,
-                                    Administrative = 20,
+                                    //Administrative = 20,
                                     MonthOfAcount = month
                                     // Month = Convert.ToDateTime(dateEdit1.Text)
                                 }); ;
@@ -137,9 +136,9 @@ namespace NewMotivationHR.PL.SalaryForms
                                 {
                                     Employee_id = item.ID,
                                     Transportation_befor = item.Transportation,
-                                    EarningWork = item.Transportation * 15 / 100,
-                                    Discount = item.Transportation * 15 / 100,
-                                    NetSalary = item.Transportation * 85 / 100,
+                                    //EarningWork = item.Transportation * 15 / 100,
+                                    //Discount = item.Transportation * 15 / 100,
+                                    //NetSalary = item.Transportation * 85 / 100,
                                     AbsenceDays = 0,
                                     MonthOfAcount = month
                                     // Month = Convert.ToDateTime(dateEdit1.Text)
@@ -197,9 +196,9 @@ namespace NewMotivationHR.PL.SalaryForms
                                 {
                                     Employee_id = item.ID,
                                     Food_ = item.Food_,
-                                    EarningWork = item.Food_ * 15 / 100,
+                                    //EarningWork = item.Food_ * 15 / 100,
 
-                                    NetFood = item.Food_ * 85 / 100,
+                                    //NetFood = item.Food_ * 85 / 100,
 
                                     MonthOfAcount = month
                                     // Month = Convert.ToDateTime(dateEdit1.Text)
@@ -286,25 +285,34 @@ namespace NewMotivationHR.PL.SalaryForms
                                 Emp_ID = item.Emp_ID,
                                 Name = item.Name,
                                 Salary = item.Salary,
-                                TBSalaries = item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
-                                Foods = item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetFood,
-                                Transportations = item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
-                                Rewards = item.Rewards.Where(x=> x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetReward,
-                                MonthOfAcount= month,
+                                ////TBSalaries = item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
+                                ////Foods = item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetFood,
+                                ////Transportations = item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary,
+                                ////Rewards = item.Rewards.Where(x=> x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetReward,
+
+                                TBSalaries = item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault() != null
+                                ? item.TBSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary
+                                : value,
+
+                                Foods = item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault() != null
+                                ? item.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetFood
+                                : value,
+
+                                Transportations = item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault() != null
+                                ? item.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetSalary
+                                : value,
+
+                                Rewards = item.Rewards.Where(x => x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault() != null
+                                ? item.Rewards.Where(x => x.DateOfEnteriy.Year.ToString() == txt_year.Text).FirstOrDefault().NetReward
+                                : value,
+
+                                MonthOfAcount = month,
                                 DateOfEnteriy= txt_year.EditValue.ToString(),
                             });                           
                         }
 
-                        //var repData = model.EmployeeSalaries.Where(x => x.MonthOfAcount.ToString() == month&&x.DateOfEnteriy.Year.ToString()==txt_year.Text).Include("Employee").ToList();
                         if (employees != null)
-                        {
-                            //  var repData1 = model.ToList();
-                            //.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).Include("Employee").ToList();
-
-                            // Motivation_Report2 motivation_Report = new Motivation_Report2();
-                            // Motivation_Report_Bank motivation_Report = new Motivation_Report_Bank();
-
-                           
+                        {                           
                             motivation_Report.DataSource = employees;
                             motivation_Report.ShowPreviewDialog();
                         }
