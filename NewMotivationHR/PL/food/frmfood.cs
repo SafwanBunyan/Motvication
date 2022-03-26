@@ -87,9 +87,9 @@ namespace NewMotivationHR.PL.food
 
            
             food.Food_ = Convert.ToInt32(Food_TextEdit.EditValue);
-           // food.NetFood = Convert.ToInt32(NetFoodTextEdit.EditValue);
+            food.NetFood = Convert.ToInt32(NetFoodTextEdit.EditValue);
             food.MonthOfAcount = (Month)Enum.Parse(typeof(Month), MonthOfAcountImageComboBoxEdit.Text, true);
-           // food.EarningWork = Convert.ToInt32(EarningWorkTextEdit.EditValue);
+            food.EarningWork = Convert.ToInt32(EarningWorkTextEdit.EditValue);
           
 
             return food;
@@ -140,7 +140,9 @@ namespace NewMotivationHR.PL.food
             {
                 if (Employee_idLookUpEdit.EditValue !=null)
                 {
-                   TotalFood();
+
+                    TotalFood();
+
                 }
             }
 
@@ -189,11 +191,6 @@ namespace NewMotivationHR.PL.food
         private void btn_print_Click(object sender, EventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
-        }
-
-        private void frmfood_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

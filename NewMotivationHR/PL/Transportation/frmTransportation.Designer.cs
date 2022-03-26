@@ -198,7 +198,6 @@
             this.gridControl1.TabIndex = 12;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // transportationBindingSource1
@@ -302,7 +301,7 @@
             this.Employee_idLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Employee_idLookUpEdit.Properties.NullText = "";
-            this.Employee_idLookUpEdit.Size = new System.Drawing.Size(115, 20);
+            this.Employee_idLookUpEdit.Size = new System.Drawing.Size(124, 20);
             this.Employee_idLookUpEdit.StyleController = this.dataLayoutControl1;
             this.Employee_idLookUpEdit.TabIndex = 4;
             this.Employee_idLookUpEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -335,7 +334,7 @@
             new DevExpress.XtraEditors.Controls.ImageComboBoxItem("نوفمبر", NewMotivationHR.DB.Enume.Month.نوفمبر, 10),
             new DevExpress.XtraEditors.Controls.ImageComboBoxItem("ديسمبر", NewMotivationHR.DB.Enume.Month.ديسمبر, 11)});
             this.MonthOfAcountImageComboBoxEdit.Properties.UseCtrlScroll = true;
-            this.MonthOfAcountImageComboBoxEdit.Size = new System.Drawing.Size(97, 20);
+            this.MonthOfAcountImageComboBoxEdit.Size = new System.Drawing.Size(106, 20);
             this.MonthOfAcountImageComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.MonthOfAcountImageComboBoxEdit.TabIndex = 5;
             this.MonthOfAcountImageComboBoxEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -352,7 +351,7 @@
             this.EarningWorkTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.EarningWorkTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.EarningWorkTextEdit.Properties.ReadOnly = true;
-            this.EarningWorkTextEdit.Size = new System.Drawing.Size(115, 20);
+            this.EarningWorkTextEdit.Size = new System.Drawing.Size(124, 20);
             this.EarningWorkTextEdit.StyleController = this.dataLayoutControl1;
             this.EarningWorkTextEdit.TabIndex = 6;
             this.EarningWorkTextEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -368,7 +367,7 @@
             this.AbsenceDaysTextEdit.Properties.Mask.EditMask = "N0";
             this.AbsenceDaysTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.AbsenceDaysTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.AbsenceDaysTextEdit.Size = new System.Drawing.Size(97, 20);
+            this.AbsenceDaysTextEdit.Size = new System.Drawing.Size(106, 20);
             this.AbsenceDaysTextEdit.StyleController = this.dataLayoutControl1;
             this.AbsenceDaysTextEdit.TabIndex = 7;
             this.AbsenceDaysTextEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -385,7 +384,7 @@
             this.PenaltiesTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.PenaltiesTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.PenaltiesTextEdit.Properties.ReadOnly = true;
-            this.PenaltiesTextEdit.Size = new System.Drawing.Size(97, 20);
+            this.PenaltiesTextEdit.Size = new System.Drawing.Size(106, 20);
             this.PenaltiesTextEdit.StyleController = this.dataLayoutControl1;
             this.PenaltiesTextEdit.TabIndex = 8;
             this.PenaltiesTextEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -402,7 +401,7 @@
             this.DiscountTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.DiscountTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.DiscountTextEdit.Properties.ReadOnly = true;
-            this.DiscountTextEdit.Size = new System.Drawing.Size(233, 20);
+            this.DiscountTextEdit.Size = new System.Drawing.Size(242, 20);
             this.DiscountTextEdit.StyleController = this.dataLayoutControl1;
             this.DiscountTextEdit.TabIndex = 9;
             this.DiscountTextEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -419,7 +418,7 @@
             this.NetSalaryTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.NetSalaryTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.NetSalaryTextEdit.Properties.ReadOnly = true;
-            this.NetSalaryTextEdit.Size = new System.Drawing.Size(233, 20);
+            this.NetSalaryTextEdit.Size = new System.Drawing.Size(242, 20);
             this.NetSalaryTextEdit.StyleController = this.dataLayoutControl1;
             this.NetSalaryTextEdit.TabIndex = 10;
             this.NetSalaryTextEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -435,7 +434,7 @@
             this.Transportation_beforTextEdit.Properties.Mask.EditMask = "N0";
             this.Transportation_beforTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.Transportation_beforTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.Transportation_beforTextEdit.Size = new System.Drawing.Size(97, 20);
+            this.Transportation_beforTextEdit.Size = new System.Drawing.Size(106, 20);
             this.Transportation_beforTextEdit.StyleController = this.dataLayoutControl1;
             this.Transportation_beforTextEdit.TabIndex = 11;
             this.Transportation_beforTextEdit.EditValueChanged += new System.EventHandler(this.Employee_idLookUpEdit_EditValueChanged);
@@ -557,7 +556,6 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.Text = "frmTransportation";
-            this.Load += new System.EventHandler(this.frmTransportation_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);

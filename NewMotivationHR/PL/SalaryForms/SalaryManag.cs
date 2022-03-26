@@ -75,7 +75,7 @@ namespace NewMotivationHR.PL.SalaryForms
 
         private EmployeeSalary Add_Salary( )
         {
-            //TotalSalary();
+            TotalSalary();
             EmployeeSalary salary = new EmployeeSalary();
             // salary= employeeSalaryBindingSource.Current as EmployeeSalary;
             salary.Employee_id = Convert.ToInt32(Employee_idLookUpEdit.EditValue);
@@ -85,14 +85,14 @@ namespace NewMotivationHR.PL.SalaryForms
             salary.AbilityPlan = Convert.ToInt32(AbilityPlanTextEdit.EditValue);
             salary.AbsenceDays = Convert.ToInt32(AbsenceDaysTextEdit.EditValue);
             salary.VacationDays = Convert.ToInt32(VacationDaysTextEdit.EditValue);
-            //salary.Administrative = Convert.ToInt32(AdministrativeTextEdit.EditValue);
-           // salary.SalaryEvaluation = Convert.ToInt32(SalaryEvaluationTextEdit.EditValue);
-           // salary.TotalRatio = Convert.ToInt32(TotalRatioTextEdit.EditValue);
-           // salary.EarningWork= Convert.ToInt32(EarningWorkTextEdit.EditValue);
-           // salary.NetSalary = Convert.ToInt32(NetSalaryTextEdit.EditValue);
+            salary.Administrative = Convert.ToInt32(AdministrativeTextEdit.EditValue);
+            salary.SalaryEvaluation = Convert.ToInt32(SalaryEvaluationTextEdit.EditValue);
+            salary.TotalRatio = Convert.ToInt32(TotalRatioTextEdit.EditValue);
+            salary.EarningWork= Convert.ToInt32(EarningWorkTextEdit.EditValue);
+            salary.NetSalary = Convert.ToInt32(NetSalaryTextEdit.EditValue);
             salary.MonthOfAcount = (Month)Enum.Parse(typeof(Month), MonthOfAcountImageComboBoxEdit.Text, true);
             
-           // salary.Discount = Convert.ToInt32(DiscountTextEdit.EditValue);
+            salary.Discount = Convert.ToInt32(DiscountTextEdit.EditValue);
             salary.Donate = Convert.ToInt32(DonateTextEdit.EditValue);
 
             return salary;
@@ -156,18 +156,25 @@ namespace NewMotivationHR.PL.SalaryForms
 
         private void Employee_idLookUpEdit_EditValueChanged(object sender, EventArgs e)
         {
-            //var netsalary = NetSalaryTextEdit.EditValue;
-            //if (netsalary != null)
-            ////if (Convert.ToInt32( ) != 0|| NetSalaryTextEdit.EditValue !=null)
-            //{
-            //    if (!string.IsNullOrEmpty(Employee_idLookUpEdit.EditValue.ToString()) && Convert.ToInt32(Employee_idLookUpEdit.EditValue) > 0)
-            //    {
+            var netsalary = NetSalaryTextEdit.EditValue;
+            if (netsalary != null)
+            //if (Convert.ToInt32( ) != 0|| NetSalaryTextEdit.EditValue !=null)
+            {
+                if (!string.IsNullOrEmpty(Employee_idLookUpEdit.EditValue.ToString()) && Convert.ToInt32(Employee_idLookUpEdit.EditValue) > 0)
+                {
 
-            //        TotalSalary();
+                    TotalSalary();
 
-            //    }
-            //}
+                }
+            }
         }
+
+      
+
+        //private void gridControl1_Click(object sender, EventArgs e)
+        //{
+        //    //
+        //}
 
         private void gridControl1_DoubleClick_1(object sender, EventArgs e)
         {
@@ -202,13 +209,13 @@ namespace NewMotivationHR.PL.SalaryForms
 
         private void PerformanceTextEdit_EditValueChanged(object sender, EventArgs e)
         {
-            //if (Employee_idLookUpEdit.EditValue != null)
-            //{
-            //    if (!string.IsNullOrEmpty(Employee_idLookUpEdit.EditValue.ToString()))
-            //    {
-            //        TotalSalary();
-            //    }
-            //}          
+            if (!string.IsNullOrEmpty(Employee_idLookUpEdit.EditValue.ToString()))
+            {
+                TotalSalary();
+            }
+
+           //TotalRate();
+          
         }
 
         private void btn_edit_Click(object sender, EventArgs e)

@@ -27,21 +27,10 @@ namespace NewMotivationHR.DB
 
         [Display(Name = "كسب عمل")]
         [ReadOnly(true)]
-        public int EarningWork
-        {
-            get
-            {
-                return (Reward_) * 15 / 100;
-            }
-        }
+        public int EarningWork { get; set; } = 0;
+
         [Display(Name = "الصافي")]
-        public int NetReward
-        {
-            get
-            {
-                return (Reward_) -EarningWork;
-            }
-        }
+        public int NetReward { get; set; } = 0;
 
         [Display(Name = "التاريخ")]
         public DateTime DateOfEnteriy { get; set; } = DateTime.Now;
