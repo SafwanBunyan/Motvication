@@ -1,4 +1,5 @@
-﻿using NewMotivationHR.PL.food;
+﻿using NewMotivationHR.PL.Department;
+using NewMotivationHR.PL.food;
 using NewMotivationHR.PL.Rewards;
 using NewMotivationHR.PL.SalaryForms;
 using NewMotivationHR.PL.Transportation;
@@ -85,6 +86,12 @@ namespace NewMotivationHR
             fm.txt_year.Visible = true;
             fm.btn_bank_print.Visible = true;
             fm.ShowDialog();
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+           DepartmentForm department = new DepartmentForm();
+            department.ShowDialog();
         }
     }
 }

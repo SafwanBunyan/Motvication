@@ -258,7 +258,11 @@ namespace NewMotivationHR.PL.SalaryForms
                         frmMonth fm = new frmMonth();
                         EmpModel model = new EmpModel();
                         var month = MonthOfAcountImageComboBoxEdit.Text;
-                        var repData = model.EmployeeSalaries.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).Include("Employee").ToList();
+                        var repData = model.EmployeeSalaries
+                                                            .Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text)
+                                                            .Include("Employee")
+                                                            //.Include("Department")
+                                                            .ToList();
                         if (repData != null)
                         {
 
@@ -322,7 +326,11 @@ namespace NewMotivationHR.PL.SalaryForms
                         frmMonth fm = new frmMonth();
                         EmpModel model = new EmpModel();
                         var month = MonthOfAcountImageComboBoxEdit.Text;
-                        var repData = model.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).Include("Employee").ToList();
+                        var repData = model.Transportations
+                                    .Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text)
+                                    .Include("Employee")
+                                     //.Include("Department")
+                                    .ToList();
                         if (repData != null)
                         {
 
@@ -337,7 +345,10 @@ namespace NewMotivationHR.PL.SalaryForms
                         frmMonth fm = new frmMonth();
                         EmpModel model = new EmpModel();
                         var month = MonthOfAcountImageComboBoxEdit.Text;
-                        var repData = model.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).Include("Employee").ToList();
+                        var repData = model.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text)
+                            .Include("Employee")
+                            //.Include("Department")
+                            .ToList();
                         if (repData != null)
                         {
 

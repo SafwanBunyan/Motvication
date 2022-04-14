@@ -64,6 +64,7 @@
     <Reference Include="DevExpress.CodeParser.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -88,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DAL.cs" />
+    <Compile Include="DB\Department.cs" />
     <Compile Include="DB\EmployeeData.cs" />
     <Compile Include="DB\EmployeeDTO.cs" />
     <Compile Include="DAL\Model\EmpModel.cs" />
@@ -156,7 +158,25 @@
     <Compile Include="Migrations\202203251609091_updatemenyColum.designer.cs">
       <DependentUpon>202203251609091_updatemenyColum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204141306388_addDepartmentTable.cs" />
+    <Compile Include="Migrations\202204141306388_addDepartmentTable.designer.cs">
+      <DependentUpon>202204141306388_addDepartmentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204141328512_addDepartmentTabletoRelationShipEmployee.cs" />
+    <Compile Include="Migrations\202204141328512_addDepartmentTabletoRelationShipEmployee.designer.cs">
+      <DependentUpon>202204141328512_addDepartmentTabletoRelationShipEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204141357431_addDepartmentTabletoRelationShipEmployee2.cs" />
+    <Compile Include="Migrations\202204141357431_addDepartmentTabletoRelationShipEmployee2.designer.cs">
+      <DependentUpon>202204141357431_addDepartmentTabletoRelationShipEmployee2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PL\Department\DepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Department\DepartmentForm.Designer.cs">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\EmployeeForms\EmployeeManeg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +305,18 @@
     <EmbeddedResource Include="Migrations\202203251609091_updatemenyColum.resx">
       <DependentUpon>202203251609091_updatemenyColum.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204141306388_addDepartmentTable.resx">
+      <DependentUpon>202204141306388_addDepartmentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204141328512_addDepartmentTabletoRelationShipEmployee.resx">
+      <DependentUpon>202204141328512_addDepartmentTabletoRelationShipEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204141357431_addDepartmentTabletoRelationShipEmployee2.resx">
+      <DependentUpon>202204141357431_addDepartmentTabletoRelationShipEmployee2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Department\DepartmentForm.resx">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\EmployeeForms\EmployeeManeg.resx">
       <DependentUpon>EmployeeManeg.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +370,7 @@
       <DependentUpon>Transport_Report.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\NewMotivationHR.DB.Department.datasource" />
     <None Include="Properties\DataSources\NewMotivationHR.DB.Employee.datasource" />
     <None Include="Properties\DataSources\NewMotivationHR.DB.EmployeeSalary.datasource" />
     <None Include="Properties\DataSources\NewMotivationHR.DB.Food.datasource" />

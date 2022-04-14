@@ -21,9 +21,19 @@ namespace NewMotivationHR.DB
         [Display(Name = "الاسم")]
         public String Name { get; set; }
 
-        [Display(Name = "الادارة")]
-        public String section { get; set; }
+        [Display(Name = "الادارة او القسم")]
+        public int? DepartmentId { get; set; }
 
+        [Display(Name = "الادارة")]
+        public Department department { get; set; }
+
+        public string departmentName
+        {
+            get
+            {
+                return department != null ? department.Name : "لا يوجد";
+            }
+        }
         [Display(Name = "رقم الحساب")]
         public String Emp_ID { get; set; }
         [Display(Name = "الحافز")]

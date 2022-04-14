@@ -28,6 +28,7 @@ namespace NewMotivationHR.DAL.Model
         public virtual DbSet<Transportation> Transportations { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
         public virtual DbSet<Reward> Rewards { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
 
 
     }

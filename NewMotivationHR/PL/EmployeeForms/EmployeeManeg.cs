@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using NewMotivationHR.DAL;
 using NewMotivationHR.DAL.Model;
+using NewMotivationHR.DB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,13 +19,15 @@ namespace NewMotivationHR.PL.EmployeeForms
     {
         DB.Employee employee = new DB.Employee();
         DAL<DB.Employee> dal = new DAL<DB.Employee>();
-
+        DAL<DB.Department> dal2 = new DAL<DB.Department>();
+        EmpModel model = new EmpModel();
+        DB.Department department;
 
         void refresh()
         {
             try
             {
-             gridControl1.DataSource = dal.ListData();
+             gridControl1.DataSource = model.Employees.Include("Department").ToList();
             }
             catch (Exception ex)
             {
@@ -37,6 +40,7 @@ namespace NewMotivationHR.PL.EmployeeForms
         {
             InitializeComponent();
             refresh();
+            getdata();
 
         }
 
@@ -53,7 +57,7 @@ namespace NewMotivationHR.PL.EmployeeForms
                 using (EmpModel model = new EmpModel())
                 {
                     employee = employeeBindingSource.Current as DB.Employee;
-                    model.Employees.Add(employee);
+                    model.Employees.AddOrUpdate(employee);
                     model.SaveChanges();
                     Refresh();
                     employeeBindingSource.Clear();
@@ -93,10 +97,6 @@ namespace NewMotivationHR.PL.EmployeeForms
         {
             using (EmpModel Model = new EmpModel())
             {
-
-                // getData();
-                //employee = employeeBindingSource.Current as Employee;
-
                 Model.Employees.Remove(Model.Employees.Single(x => x.ID == employee.ID));
                 Model.SaveChanges();
                 Refresh();
@@ -104,7 +104,14 @@ namespace NewMotivationHR.PL.EmployeeForms
                 refresh();
             }
         }
-
+        public void getdata()
+        {
+            departmentBindingSource.DataSource = model.Departments.ToList();
+            //ItemForDepartmentId
+            //ItemForDepartmentId.Properties = model.Departments.Select(t => new { t.ID, t.Name }).ToList();
+            //departmentBindingSource.DisplayMember = "Name";
+            //departmentBindingSource.Properties.ValueMember = "ID";
+        }
         private void btn_print_Click(object sender, EventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
