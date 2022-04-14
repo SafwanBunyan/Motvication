@@ -9,6 +9,10 @@ namespace NewMotivationHR.DB
 {
     public class Department
     {
+        public Department()
+        {
+            this.Employees = new List<Employee>();
+        }
         public int ID { get; set; }
         [Display(Name = "اسم الادارة")]
         public String Name { get; set; }
@@ -21,6 +25,6 @@ namespace NewMotivationHR.DB
         
         [Display(Name = "الوصف ")]
         public String Description { get; set; }
- 
+        List<Employee> Employees { get; set; }
     }
 }

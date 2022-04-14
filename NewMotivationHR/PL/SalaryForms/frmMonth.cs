@@ -39,7 +39,7 @@ namespace NewMotivationHR.PL.SalaryForms
             InitializeComponent();
         }
 
-        private void btn_Save_Click(object sender, EventArgs e)
+        private async void btn_Save_Click(object sender, EventArgs e)
         {
             if (txt_year.Text != "")
             {
@@ -242,7 +242,11 @@ namespace NewMotivationHR.PL.SalaryForms
                         frmMonth fm = new frmMonth();
                         EmpModel model = new EmpModel();
                         var month = MonthOfAcountImageComboBoxEdit.Text;
-                        var repData = model.Transportations.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text).Include("Employee").ToList();
+                        var repData = model.Transportations
+                                                           .Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text)
+                                                           .Include("Employee")
+                                                           .Include("Employee.department")
+                                                           .ToList();
                         if (repData != null)
                         {
 
@@ -258,16 +262,17 @@ namespace NewMotivationHR.PL.SalaryForms
                         frmMonth fm = new frmMonth();
                         EmpModel model = new EmpModel();
                         var month = MonthOfAcountImageComboBoxEdit.Text;
-                        var repData = model.EmployeeSalaries
+                        var repData = await model.EmployeeSalaries
                                                             .Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text)
                                                             .Include("Employee")
+                                                            .Include("Employee.department")
+                                                            .ToListAsync();
                                                             //.Include("Department")
-                                                            .ToList();
+                                                            // .ToList();
                         if (repData != null)
                         {
 
                             Motivation_Report2 motivation_Report = new Motivation_Report2();
-                            //  Bank_Report motivation_Report = new Bank_Report();
                             motivation_Report.DataSource = repData.ToList();
                             motivation_Report.ShowPreviewDialog();
                         }
@@ -329,7 +334,7 @@ namespace NewMotivationHR.PL.SalaryForms
                         var repData = model.Transportations
                                     .Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text)
                                     .Include("Employee")
-                                     //.Include("Department")
+                                    .Include("Employee.department")
                                     .ToList();
                         if (repData != null)
                         {
@@ -347,7 +352,7 @@ namespace NewMotivationHR.PL.SalaryForms
                         var month = MonthOfAcountImageComboBoxEdit.Text;
                         var repData = model.Foods.Where(x => x.MonthOfAcount.ToString() == month && x.DateOfEnteriy.Year.ToString() == txt_year.Text)
                             .Include("Employee")
-                            //.Include("Department")
+                            .Include("Employee.department")
                             .ToList();
                         if (repData != null)
                         {

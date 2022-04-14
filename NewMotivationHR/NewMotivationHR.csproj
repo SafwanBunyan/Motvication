@@ -170,6 +170,10 @@
     <Compile Include="Migrations\202204141357431_addDepartmentTabletoRelationShipEmployee2.designer.cs">
       <DependentUpon>202204141357431_addDepartmentTabletoRelationShipEmployee2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204142250199_updateDepartmentTable.cs" />
+    <Compile Include="Migrations\202204142250199_updateDepartmentTable.designer.cs">
+      <DependentUpon>202204142250199_updateDepartmentTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PL\Department\DepartmentForm.cs">
       <SubType>Form</SubType>
@@ -313,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204141357431_addDepartmentTabletoRelationShipEmployee2.resx">
       <DependentUpon>202204141357431_addDepartmentTabletoRelationShipEmployee2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204142250199_updateDepartmentTable.resx">
+      <DependentUpon>202204142250199_updateDepartmentTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Department\DepartmentForm.resx">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
